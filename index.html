@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SoupFork Studios — Simmering</title>
-<meta name="description" content="SoupFork Studios. Something's on the stove.">
+<title>SoupFork Studios — Games</title>
+<meta name="description" content="SoupFork Studios. Suck It, Zombies!, KY State ProBaiter, and Pizza Police — in testing now.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -22,17 +22,22 @@
 
   *{ box-sizing:border-box; }
 
+  html{ scroll-behavior:smooth; }
+
   html,body{
     margin:0;
     padding:0;
-    height:100%;
     background:var(--yolk);
     color:var(--ink);
     font-family:'Work Sans', sans-serif;
     overflow-x:hidden;
   }
 
-  body{
+  a{ color:inherit; }
+
+  /* ================= HERO ================= */
+
+  .hero{
     background:
       radial-gradient(circle at 18% 12%, rgba(255,255,255,0.16), transparent 40%),
       radial-gradient(circle at 85% 82%, rgba(0,0,0,0.10), transparent 45%),
@@ -40,8 +45,8 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    min-height:100vh;
-    padding:6vh 6vw;
+    min-height:92vh;
+    padding:6vh 6vw 4vh;
   }
 
   .wrap{
@@ -54,7 +59,6 @@
     flex-wrap:wrap;
   }
 
-  /* ---------- Logo side ---------- */
   .logo-side{
     position:relative;
     flex:0 0 auto;
@@ -84,7 +88,6 @@
     transform:scale(1.35);
   }
 
-  /* steam wisps rising off the bowl in the logo */
   .steam{
     position:absolute;
     top:-14%;
@@ -116,7 +119,6 @@
     100%{ transform:translateY(-120px) scaleX(1.6); opacity:0; }
   }
 
-  /* ---------- Text side ---------- */
   .text-side{
     flex:1 1 420px;
     max-width:560px;
@@ -173,7 +175,7 @@
     margin:1.1em 0 0;
     font-size:1.15rem;
     font-weight:500;
-    max-width:32ch;
+    max-width:34ch;
     color:rgba(28,23,18,0.85);
   }
   .tagline em{
@@ -182,9 +184,8 @@
     color:var(--bowl-red);
   }
 
-  /* pot / progress signature */
   .pot{
-    margin-top:2.4em;
+    margin-top:2em;
     display:flex;
     align-items:center;
     gap:1em;
@@ -209,7 +210,7 @@
   .pot-fill{
     position:absolute;
     inset:0;
-    width:38%;
+    width:78%;
     border-radius:999px;
     background:repeating-linear-gradient(
       -45deg,
@@ -224,66 +225,437 @@
   }
 
   .note{
-    margin-top:1.6em;
-    font-size:.92rem;
-    color:rgba(28,23,18,0.7);
+    margin-top:1.5em;
+    font-size:.95rem;
+    color:rgba(28,23,18,0.75);
     line-height:1.5;
   }
-
-  footer{
-    position:fixed;
-    bottom:1.2rem;
-    left:0;
-    right:0;
-    text-align:center;
-    font-size:.75rem;
-    letter-spacing:.08em;
-    text-transform:uppercase;
-    color:rgba(28,23,18,0.55);
-    font-weight:600;
+  .note a{
+    font-weight:700;
+    color:var(--ink);
+    text-decoration-color:rgba(28,23,18,0.4);
   }
+
+  .scroll-cue{
+    margin-top:2.2em;
+    display:inline-flex;
+    align-items:center;
+    gap:.5em;
+    font-size:.8rem;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--ink);
+    text-decoration:none;
+    opacity:.75;
+  }
+  .scroll-cue svg{ animation:bob 1.6s ease-in-out infinite; }
+  @keyframes bob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(5px); } }
 
   @media (max-width:640px){
     .wrap{ flex-direction:column; text-align:center; }
     .text-side{ text-align:center; }
     .tagline{ margin-left:auto; margin-right:auto; }
     .pot{ justify-content:center; }
+    .scroll-cue{ display:none; }
   }
 
   @media (prefers-reduced-motion: reduce){
-    .steam span, .eyebrow::before, .pot-fill{ animation:none; }
+    .steam span, .eyebrow::before, .pot-fill, .scroll-cue svg{ animation:none; }
+  }
+
+  /* ================= GAMES SECTION ================= */
+
+  main{
+    background:var(--cream);
+    position:relative;
+  }
+
+  .menu-section{
+    max-width:1080px;
+    margin:0 auto;
+    padding:5rem 6vw 3rem;
+  }
+
+  .section-head{
+    text-align:center;
+    max-width:640px;
+    margin:0 auto 3rem;
+  }
+  .section-head .eyebrow{
+    background:var(--bowl-red);
+    color:var(--cream);
+    box-shadow:0 6px 0 rgba(28,23,18,0.12);
+  }
+  .section-head h2{
+    font-family:'Bangers', cursive;
+    font-weight:400;
+    font-size:clamp(2.4rem, 5vw, 3.2rem);
+    margin:.5em 0 .3em;
+    color:var(--ink);
+  }
+  .section-head p{
+    color:var(--beard);
+    font-size:1.02rem;
+    line-height:1.5;
+    margin:0;
+  }
+
+  /* ---- game ticket card ---- */
+
+  .game-card{
+    --accent: var(--yolk);
+    --accent2: var(--chrome);
+    background:var(--card-bg, var(--ink));
+    color:var(--cream);
+    border-radius:22px;
+    border:3px solid var(--accent);
+    box-shadow:0 18px 40px -22px rgba(28,23,18,0.55);
+    display:flex;
+    flex-wrap:wrap;
+    overflow:hidden;
+    margin-bottom:3rem;
+  }
+
+  .game-card:nth-of-type(even){ flex-direction:row-reverse; }
+
+  .game-shots{
+    flex:1 1 340px;
+    display:flex;
+    gap:.6rem;
+    align-items:flex-end;
+    padding:1.4rem;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.25) 100%),
+      var(--shots-bg, rgba(0,0,0,0.15));
+    overflow-x:auto;
+    scrollbar-width:none;
+  }
+  .game-shots::-webkit-scrollbar{ display:none; }
+
+  .game-shots img{
+    height:220px;
+    width:auto;
+    border-radius:10px;
+    border:2px solid rgba(255,255,255,0.18);
+    box-shadow:0 12px 24px -12px rgba(0,0,0,0.6);
+    flex:0 0 auto;
+  }
+  .game-shots img.portrait{ height:260px; }
+
+  .game-info{
+    flex:1 1 360px;
+    padding:2.2rem 2.2rem 2.4rem;
+    display:flex;
+    flex-direction:column;
+    gap:.8rem;
+  }
+
+  .game-badge{
+    display:inline-flex;
+    align-self:flex-start;
+    align-items:center;
+    gap:.5em;
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    background:var(--accent);
+    color:var(--ink);
+    padding:.4em .9em;
+    border-radius:999px;
+  }
+  .game-badge::before{
+    content:"";
+    width:.5em;
+    height:.5em;
+    border-radius:50%;
+    background:var(--ink);
+    opacity:.55;
+  }
+
+  .game-info h3{
+    font-family:'Bangers', cursive;
+    font-weight:400;
+    letter-spacing:.02em;
+    font-size:clamp(1.8rem, 3.4vw, 2.4rem);
+    margin:0;
+    color:var(--accent2);
+  }
+
+  .game-tagline{
+    font-weight:600;
+    font-size:1.02rem;
+    margin:0;
+    color:var(--cream);
+    opacity:.92;
+  }
+
+  .game-body{
+    font-size:.96rem;
+    line-height:1.55;
+    margin:0;
+    color:rgba(255,243,221,0.82);
+  }
+
+  .game-ctas{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.7rem;
+    margin-top:.4rem;
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:.5em;
+    font-family:'Work Sans', sans-serif;
+    font-weight:700;
+    font-size:.9rem;
+    text-decoration:none;
+    padding:.75em 1.3em;
+    border-radius:10px;
+    border:2px solid transparent;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{ transform:translateY(-2px); }
+
+  .btn--primary{
+    background:var(--accent);
+    color:var(--ink);
+    box-shadow:0 6px 0 rgba(0,0,0,0.25);
+  }
+  .btn--primary:hover{ box-shadow:0 8px 0 rgba(0,0,0,0.25); }
+
+  .btn--ghost{
+    background:transparent;
+    border-color:rgba(255,243,221,0.55);
+    color:var(--cream);
+  }
+  .btn--ghost:hover{ border-color:var(--cream); }
+
+  .btn--sm{ font-size:.8rem; padding:.6em 1.05em; }
+
+  /* ---- spinoff nested block ---- */
+
+  .spinoff{
+    margin-top:.6rem;
+    border-top:1px dashed rgba(255,243,221,0.28);
+    padding-top:1.2rem;
+    display:flex;
+    gap:1rem;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+  .spinoff-shot img{
+    height:100px;
+    border-radius:8px;
+    border:2px solid rgba(255,243,221,0.25);
+  }
+  .spinoff-info{ flex:1 1 200px; }
+  .spinoff-label{
+    font-size:.68rem;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--accent);
+  }
+  .spinoff-info h4{
+    font-family:'Bangers', cursive;
+    font-weight:400;
+    font-size:1.3rem;
+    margin:.2em 0 .3em;
+    color:var(--cream);
+  }
+  .spinoff-info p{
+    margin:0 0 .7rem;
+    font-size:.88rem;
+    line-height:1.45;
+    color:rgba(255,243,221,0.78);
+  }
+
+  /* ---- per-game palettes, pulled from each game's own UI ---- */
+
+  .game-card--siz{
+    --card-bg: #200a0a;
+    --accent: #e8542f;
+    --accent2: #7fd858;
+    --shots-bg: rgba(0,0,0,0.3);
+  }
+  .game-card--probaiter{
+    --card-bg: #0c1730;
+    --accent: #e8a93a;
+    --accent2: #f4c568;
+    --shots-bg: rgba(0,0,0,0.25);
+  }
+  .game-card--pizzapolice{
+    --card-bg: #2c1212;
+    --accent: #d4af37;
+    --accent2: #f2cf5b;
+    --shots-bg: rgba(0,0,0,0.2);
+  }
+
+  /* ================= TESTER BAND ================= */
+
+  .tester-band{
+    background:var(--ink);
+    color:var(--cream);
+    text-align:center;
+    padding:4rem 6vw;
+  }
+  .tester-band h2{
+    font-family:'Bangers', cursive;
+    font-weight:400;
+    font-size:clamp(2rem, 4.5vw, 2.8rem);
+    margin:0 0 .5em;
+    color:var(--yolk);
+  }
+  .tester-band p{
+    max-width:520px;
+    margin:0 auto 1.6em;
+    line-height:1.55;
+    color:rgba(255,243,221,0.85);
+  }
+
+  /* ================= FOOTER ================= */
+
+  footer{
+    background:var(--ink);
+    color:rgba(255,243,221,0.55);
+    text-align:center;
+    font-size:.75rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    font-weight:600;
+    padding:1.4rem 1rem 1.8rem;
+    border-top:1px solid rgba(255,243,221,0.12);
+  }
+
+  @media (max-width:720px){
+    .game-card, .game-card:nth-of-type(even){ flex-direction:column; }
+    .game-shots{ order:-1; }
   }
 </style>
 </head>
 <body>
 
-  <div class="wrap">
-    <div class="logo-side">
-      <div class="steam" aria-hidden="true">
-        <span></span><span></span><span></span><span></span>
-      </div>
-      <div class="logo-frame">
-        <img src="logo.jpg" alt="SoupFork Studios mascot — a chrome fork-headed figure with a beard and sunglasses, arms crossed beside a steaming bowl of soup">
-      </div>
-    </div>
-
-    <div class="text-side">
-      <span class="eyebrow">Kitchen closed</span>
-      <h1>SoupFork<span class="studios">Studios</span></h1>
-      <p class="tagline">Something's <em>simmering</em>. The site isn't served yet — check back soon.</p>
-
-      <div class="pot" role="status" aria-label="Site under construction">
-        <span class="pot-label">Simmering</span>
-        <div class="pot-track">
-          <div class="pot-fill"></div>
+  <section class="hero">
+    <div class="wrap">
+      <div class="logo-side">
+        <div class="steam" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="logo-frame">
+          <img src="logo.jpg" alt="SoupFork Studios mascot — a chrome fork-headed figure with a beard and sunglasses, arms crossed beside a steaming bowl of soup">
         </div>
       </div>
 
-      <p class="note">Join our <a href="https://groups.google.com/g/soupforktest" target="_blank" rel="noopener noreferrer">Google Group</a> and become a tester!</p>
-    </div>
-  </div>
+      <div class="text-side">
+        <span class="eyebrow">Now serving</span>
+        <h1>SoupFork<span class="studios">Studios</span></h1>
+        <p class="tagline">Homemade games out of Kentucky. <em>Three</em> are in testing right now.</p>
 
-  <footer>&copy; <span id="year"></span> SoupFork Studios</footer>
+        <div class="pot" role="status" aria-label="Games in active testing">
+          <span class="pot-label">Cooking</span>
+          <div class="pot-track">
+            <div class="pot-fill"></div>
+          </div>
+        </div>
+
+        <p class="note">Join the <a href="https://groups.google.com/g/soupforktest" target="_blank" rel="noopener noreferrer">tester group</a> for sign-up links to every game, current and new.</p>
+
+        <a class="scroll-cue" href="#games">
+          See the games
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="menu-section" id="games">
+      <div class="section-head">
+        <span class="eyebrow">On the menu</span>
+        <h2>Our Games</h2>
+        <p>Everything below is built by SoupFork Studios and playable today — some fresh out of the oven, some still in the kitchen.</p>
+      </div>
+
+      <!-- Suck It, Zombies! -->
+      <article class="game-card game-card--siz">
+        <div class="game-shots">
+          <img src="screenshots/siz-title.jpg" alt="Suck It, Zombies! title screen">
+          <img src="screenshots/siz-gameplay.jpg" alt="Suck It, Zombies! top-down gameplay">
+          <img src="screenshots/siz-armory.jpg" alt="Suck It, Zombies! weapon armory upgrade screen">
+        </div>
+        <div class="game-info">
+          <span class="game-badge">Live on Google Play</span>
+          <h3>Suck It, Zombies!</h3>
+          <p class="game-tagline">Twin-stick zombie survival, built for couch or LAN co-op.</p>
+          <p class="game-body">Pick your sucker, grab a gun from the Armory, and hold the line. Full weapon upgrade trees, unlockable abilities, and local multiplayer for when you need backup.</p>
+          <div class="game-ctas">
+            <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.BOMBIN.suck" target="_blank" rel="noopener noreferrer">Get it on Google Play</a>
+            <a class="btn btn--ghost" href="https://play.google.com/apps/testing/com.BOMBIN.suck" target="_blank" rel="noopener noreferrer">Join the Open Beta</a>
+          </div>
+
+          <div class="spinoff">
+            <div class="spinoff-shot">
+              <img src="screenshots/ppe-gameplay.jpg" alt="SiZ Firehouse Pizza Edition gameplay showing the FH Pizza logo on the floor">
+            </div>
+            <div class="spinoff-info">
+              <span class="spinoff-label">Also in testing</span>
+              <h4>SiZ: Firehouse Pizza Edition</h4>
+              <p>A free promo demo built for Firehouse Pizza — same zombie-clearing chaos, reskinned and let loose in the restaurant.</p>
+              <a class="btn btn--ghost btn--sm" href="https://play.google.com/apps/testing/com.FORK.sizpizza" target="_blank" rel="noopener noreferrer">Join the Demo Beta</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- KY State ProBaiter -->
+      <article class="game-card game-card--probaiter">
+        <div class="game-shots">
+          <img class="portrait" src="screenshots/probaiter-home.jpg" alt="KY State ProBaiter home screen listing favorite lakes">
+          <img class="portrait" src="screenshots/probaiter-lake.jpg" alt="KY State ProBaiter Kentucky Lake conditions detail screen">
+          <img class="portrait" src="screenshots/probaiter-trend.jpg" alt="KY State ProBaiter fishing forecast trend clock">
+        </div>
+        <div class="game-info">
+          <span class="game-badge">Closed testing</span>
+          <h3>KY State ProBaiter</h3>
+          <p class="game-tagline">Real-time fishing conditions for lakes and rivers across Kentucky.</p>
+          <p class="game-body">Live water levels, weather, and fishing forecasts pulled straight from USGS, NWS, TVA, and USACE data for dozens of lakes and rivers statewide. Favorite your spots, check the best time to fish today, and see 48-hour water level trends before you load the boat.</p>
+          <div class="game-ctas">
+            <a class="btn btn--primary" href="https://play.google.com/apps/testing/com.FORK.kyprobaiter" target="_blank" rel="noopener noreferrer">Join Closed Testing</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Pizza Police -->
+      <article class="game-card game-card--pizzapolice">
+        <div class="game-shots">
+          <img class="portrait" src="screenshots/pp-police.jpg" alt="Pizza Police - Police role figurine">
+          <img class="portrait" src="screenshots/pp-perp.jpg" alt="Pizza Police - Pineapple Perpetrator role figurine">
+          <img class="portrait" src="screenshots/pp-witness.jpg" alt="Pizza Police - Witness role figurine">
+        </div>
+        <div class="game-info">
+          <span class="game-badge">Closed testing</span>
+          <h3>Pizza Police</h3>
+          <p class="game-tagline">A social deduction game built for restaurant tables.</p>
+          <p class="game-body">Somewhere at the table is the Pineapple Perpetrator. Scan the code, get your role, and figure out who it is before time runs out. Built for phones — no extra hardware, just your table and about five and a half minutes.</p>
+          <div class="game-ctas">
+            <a class="btn btn--primary" href="https://play.google.com/apps/testing/com.FORK.pizzapolice" target="_blank" rel="noopener noreferrer">Join Closed Testing</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="tester-band">
+      <h2>Become a Tester</h2>
+      <p>Our tester group has sign-up links for every game above, plus new ones as they head into testing. Come poke holes in things before anyone else does.</p>
+      <a class="btn btn--primary" href="https://groups.google.com/g/soupforktest" target="_blank" rel="noopener noreferrer">Join the Tester Group</a>
+    </section>
+  </main>
+
+  <footer>&copy; <span id="year"></span> Soup Fork Studios</footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
