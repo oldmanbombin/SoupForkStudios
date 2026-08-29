@@ -322,26 +322,27 @@
   .game-shots{
     flex:1 1 340px;
     display:flex;
-    gap:.6rem;
-    align-items:flex-end;
-    padding:1.4rem;
+    flex-wrap:wrap;
+    gap:.7rem;
+    align-items:center;
+    align-content:center;
+    justify-content:center;
+    padding:1.6rem;
     background:
       linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.25) 100%),
       var(--shots-bg, rgba(0,0,0,0.15));
-    overflow-x:auto;
-    scrollbar-width:none;
   }
-  .game-shots::-webkit-scrollbar{ display:none; }
 
   .game-shots img{
-    height:220px;
+    max-height:190px;
+    max-width:100%;
     width:auto;
     border-radius:10px;
     border:2px solid rgba(255,255,255,0.18);
     box-shadow:0 12px 24px -12px rgba(0,0,0,0.6);
     flex:0 0 auto;
   }
-  .game-shots img.portrait{ height:260px; }
+  .game-shots img.portrait{ max-height:250px; }
 
   .game-info{
     flex:1 1 360px;
