@@ -519,6 +519,12 @@
     text-align:center;
     padding:4rem 6vw;
   }
+  .tester-band .btn--primary{
+    background:var(--yolk);
+    color:var(--ink);
+    font-size:1.05rem;
+    padding:1em 2em;
+  }
   .tester-band h2{
     font-family:'Bangers', cursive;
     font-weight:400;
@@ -531,6 +537,70 @@
     margin:0 auto 1.6em;
     line-height:1.55;
     color:rgba(255,243,221,0.85);
+  }
+
+  /* ================= FAQ ================= */
+
+  .faq-section{
+    max-width:760px;
+    margin:0 auto;
+    padding:4rem 6vw 5rem;
+  }
+  .faq-section .eyebrow{
+    background:var(--bowl-red);
+    color:var(--cream);
+    box-shadow:0 6px 0 rgba(28,23,18,0.12);
+  }
+  .faq-section h2{
+    font-family:'Bangers', cursive;
+    font-weight:400;
+    font-size:clamp(2rem, 4.5vw, 2.6rem);
+    margin:.5em 0 0;
+    color:var(--ink);
+  }
+
+  .faq-list{
+    margin-top:2rem;
+    display:flex;
+    flex-direction:column;
+    gap:.8rem;
+  }
+
+  .faq-item{
+    background:#fff;
+    border:2px solid rgba(28,23,18,0.15);
+    border-radius:14px;
+    padding:.2rem 1.3rem;
+  }
+  .faq-item summary{
+    cursor:pointer;
+    list-style:none;
+    padding:1.1rem 1.6rem 1.1rem 0;
+    font-weight:700;
+    color:var(--ink);
+    position:relative;
+  }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-item summary::after{
+    content:"+";
+    position:absolute;
+    right:0;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:1.4rem;
+    font-weight:700;
+    color:var(--bowl-red);
+  }
+  .faq-item[open] summary::after{ content:"\2212"; }
+  .faq-item p{
+    margin:0 0 1.2rem;
+    color:var(--beard);
+    line-height:1.55;
+    font-size:.96rem;
+  }
+  .faq-item a{
+    font-weight:700;
+    color:var(--bowl-red);
   }
 
   /* ================= FOOTER ================= */
@@ -578,7 +648,7 @@
           </div>
         </div>
 
-        <p class="note">Join the <a href="https://groups.google.com/g/soupforktest" target="_blank" rel="noopener noreferrer">tester group</a> for sign-up links to every app, current and new.</p>
+        <p class="note">You must <a href="https://groups.google.com/g/soupforktest" target="_blank" rel="noopener noreferrer">join the tester group</a> before any testing link below will open. Join first, then come back and tap in.</p>
 
         <a class="scroll-cue" href="#games">
           See the apps
@@ -666,8 +736,29 @@
 
     <section class="tester-band">
       <h2>Become a Tester</h2>
-      <p>Our tester group has sign-up links for every app above, plus new ones as they head into testing. Come poke holes in things before anyone else does.</p>
+      <p>You have to join the tester group before any "Closed Testing" or "Open Beta" link on this page will actually open. Join first, then come back and tap into whichever app you want to try.</p>
       <a class="btn btn--primary" href="https://groups.google.com/g/soupforktest" target="_blank" rel="noopener noreferrer">Join the Tester Group</a>
+    </section>
+
+    <section class="faq-section">
+      <div class="section-head">
+        <span class="eyebrow">Questions</span>
+        <h2>FAQ</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>The Google Play link says the app isn't available, or the page won't load. What's wrong?</summary>
+          <p>You're not in the tester group yet. Google Play only shows a closed testing or open beta page to accounts that have joined the linked group first. <a href="https://groups.google.com/g/soupforktest" target="_blank" rel="noopener noreferrer">Join the tester group</a>, then reopen the testing link using the same Google account.</p>
+        </details>
+        <details class="faq-item">
+          <summary>I joined the group. Now what?</summary>
+          <p>Come back to this page and tap the testing link for whichever app you want to try. It can take a few minutes after joining before Google Play recognizes you as a member, so give it a moment if it still doesn't load right away.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do I need a separate sign-up for each app?</summary>
+          <p>No. One tester group membership covers every app on this page, plus anything new that goes into testing later.</p>
+        </details>
+      </div>
     </section>
   </main>
 
