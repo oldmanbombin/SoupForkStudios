@@ -304,20 +304,32 @@
     padding:2.6rem 2.6rem 2.8rem;
   }
 
+  .ribbon-box{
+    position:absolute;
+    top:0;
+    right:0;
+    width:130px;
+    height:130px;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:2;
+  }
   .ribbon{
     position:absolute;
-    top:1.4rem;
-    right:-2.6rem;
-    transform:rotate(40deg);
+    display:block;
+    width:180px;
+    top:28px;
+    right:-46px;
+    transform:rotate(45deg);
     background:var(--bowl-red);
     color:var(--cream);
     font-weight:800;
     font-size:.72rem;
     letter-spacing:.14em;
     text-transform:uppercase;
-    padding:.45em 3.2em;
-    box-shadow:0 4px 10px rgba(0,0,0,0.35);
-    z-index:2;
+    text-align:center;
+    padding:.5em 0;
+    box-shadow:0 2px 8px rgba(0,0,0,0.35);
   }
 
   .spotlight-head{
@@ -421,9 +433,6 @@
     font-weight:600;
   }
 
-  @media (max-width:640px){
-    .ribbon{ right:-3.2rem; }
-  }
 
   /* ================= GAMES SECTION ================= */
 
@@ -827,7 +836,7 @@
       </div>
 
       <article class="spotlight-card">
-        <span class="ribbon">New</span>
+        <div class="ribbon-box"><span class="ribbon">New</span></div>
         <div class="spotlight-inner">
           <div class="spotlight-head">
             <h3>Cheetah Breedah</h3>
