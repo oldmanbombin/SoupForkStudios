@@ -264,6 +264,167 @@
     .steam span, .eyebrow::before, .pot-fill, .scroll-cue svg{ animation:none; }
   }
 
+  /* ================= NEW RELEASE SPOTLIGHT ================= */
+  /* Reusable: swap the single .spotlight-card's content for whatever's
+     newest, then move the previous release down into .menu-section
+     as a normal .game-card when it's no longer the newest thing out. */
+
+  .spotlight-section{
+    max-width:1080px;
+    margin:0 auto;
+    padding:5rem 6vw 1rem;
+  }
+
+  .spotlight-section .section-head .eyebrow{
+    background:linear-gradient(100deg, #d9a441, #f2cf5b, #d9a441);
+    color:var(--ink);
+    box-shadow:0 6px 0 rgba(28,23,18,0.12);
+  }
+
+  .spotlight-card{
+    --card-bg:#241a10;
+    --accent:#d9a441;
+    --accent2:#f0d38f;
+    position:relative;
+    background:var(--card-bg);
+    color:var(--cream);
+    border-radius:26px;
+    padding:3px;
+    background:
+      linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
+      linear-gradient(120deg, #d9a441, #7a4a23, #d9a441, #f2cf5b) border-box;
+    border:3px solid transparent;
+    box-shadow:0 26px 60px -26px rgba(28,23,18,0.65);
+    overflow:hidden;
+  }
+
+  .spotlight-inner{
+    background:var(--card-bg);
+    border-radius:23px;
+    padding:2.6rem 2.6rem 2.8rem;
+  }
+
+  .ribbon{
+    position:absolute;
+    top:1.4rem;
+    right:-2.6rem;
+    transform:rotate(40deg);
+    background:var(--bowl-red);
+    color:var(--cream);
+    font-weight:800;
+    font-size:.72rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    padding:.45em 3.2em;
+    box-shadow:0 4px 10px rgba(0,0,0,0.35);
+    z-index:2;
+  }
+
+  .spotlight-head{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    gap:.7rem 1rem;
+    margin-bottom:.3rem;
+  }
+
+  .spotlight-inner h3{
+    font-family:'Bangers', cursive;
+    font-weight:400;
+    letter-spacing:.02em;
+    font-size:clamp(2.1rem, 4.4vw, 3rem);
+    margin:0;
+    color:var(--accent2);
+  }
+
+  .spotlight-hook{
+    font-style:italic;
+    font-weight:600;
+    font-size:1.15rem;
+    color:var(--accent);
+    margin:.2rem 0 1.4rem;
+  }
+
+  .spotlight-gallery{
+    display:flex;
+    gap:.8rem;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    padding:.3rem .3rem 1.1rem;
+    margin:0 -.3rem 1.6rem;
+  }
+  .spotlight-gallery img{
+    height:280px;
+    width:auto;
+    flex:0 0 auto;
+    scroll-snap-align:start;
+    border-radius:12px;
+    border:2px solid rgba(240,211,143,0.3);
+    box-shadow:0 14px 28px -14px rgba(0,0,0,0.65);
+  }
+
+  .spotlight-body{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+    gap:1.4rem 2rem;
+    margin-bottom:1.6rem;
+  }
+  .spotlight-feature h4{
+    font-family:'Bangers', cursive;
+    font-weight:400;
+    letter-spacing:.01em;
+    font-size:1.2rem;
+    margin:0 0 .3rem;
+    color:var(--accent);
+  }
+  .spotlight-feature p{
+    margin:0;
+    font-size:.92rem;
+    line-height:1.5;
+    color:rgba(255,243,221,0.82);
+  }
+
+  .spotlight-note{
+    background:rgba(217,164,65,0.1);
+    border:1px dashed rgba(217,164,65,0.45);
+    border-radius:12px;
+    padding:1rem 1.2rem;
+    font-size:.9rem;
+    line-height:1.55;
+    color:rgba(255,243,221,0.85);
+    margin-bottom:1.8rem;
+  }
+  .spotlight-note strong{ color:var(--accent2); }
+
+  .spotlight-goal{
+    border-top:1px solid rgba(240,211,143,0.2);
+    padding-top:1.6rem;
+    margin-bottom:1.8rem;
+  }
+  .spotlight-goal h4{
+    font-family:'Bangers', cursive;
+    font-weight:400;
+    font-size:1.5rem;
+    letter-spacing:.03em;
+    margin:0 0 .5rem;
+    color:var(--accent2);
+  }
+  .spotlight-goal p{
+    margin:0 0 .8rem;
+    font-size:.95rem;
+    line-height:1.6;
+    color:rgba(255,243,221,0.85);
+  }
+  .spotlight-tagline{
+    font-style:italic;
+    color:var(--accent);
+    font-weight:600;
+  }
+
+  @media (max-width:640px){
+    .ribbon{ right:-3.2rem; }
+  }
+
   /* ================= GAMES SECTION ================= */
 
   main{
@@ -659,6 +820,73 @@
   </section>
 
   <main>
+    <section class="spotlight-section">
+      <div class="section-head">
+        <span class="eyebrow">New Release</span>
+        <h2>Fresh Out of the Oven</h2>
+      </div>
+
+      <article class="spotlight-card">
+        <span class="ribbon">New</span>
+        <div class="spotlight-inner">
+          <div class="spotlight-head">
+            <h3>Cheetah Breedah</h3>
+          </div>
+          <p class="spotlight-hook">Can you breed a King Cheetah?</p>
+
+          <div class="spotlight-gallery">
+            <img src="cheetah-1.jpg" alt="Cheetah Breedah in-app tutorial overlay introducing the roster screen">
+            <img src="cheetah-2.jpg" alt="Cheetah Breedah roster screen with a cheetah named Asante and Genetics and Mingle Mode buttons">
+            <img src="cheetah-3.jpg" alt="Cheetah Breedah cheetah care screen showing exercise, hunger, and enclosure stats">
+            <img src="cheetah-4.jpg" alt="Cheetah Breedah weekly report screen with hormone level charts">
+            <img src="cheetah-5.jpg" alt="Cheetah Breedah genetics roster screen with View, Focus, and Pair options">
+            <img src="cheetah-6.jpg" alt="Cheetah Breedah detailed physical traits panel listing dozens of tracked genetic traits">
+            <img src="cheetah-7.jpg" alt="Cheetah Breedah research screen for buying lab equipment and hiring a specialist">
+            <img src="cheetah-8.jpg" alt="Cheetah Breedah Mingle Mode showing several cheetahs, including a striped King Cheetah pattern, moving around a shared enclosure">
+          </div>
+
+          <div class="spotlight-body">
+            <div class="spotlight-feature">
+              <h4>Raise and care for real personalities</h4>
+              <p>Feed them, exercise them, play with them, and keep their space clean. Every cat has its own personality, its own build, and its own needs, and neglecting them has real consequences.</p>
+            </div>
+            <div class="spotlight-feature">
+              <h4>Feel like a real scientist</h4>
+              <p>Certain information about your cats is locked behind things like number of interactions, time spent observed, and time spent with other animals. Use every option to learn everything you can, or just watch them play.</p>
+            </div>
+            <div class="spotlight-feature">
+              <h4>Watch them actually live in their space</h4>
+              <p>Cheetahs move around and pose based on their actual dispositions. Watch them mingle, or toss a ball and watch them chase it down and pounce on it.</p>
+            </div>
+            <div class="spotlight-feature">
+              <h4>Dive into real genetics</h4>
+              <p>The game tracks dozens of genetic traits and actual kinship between your animals. Breed two cheetahs that are too closely related and you'll get a warning, with real consequences for the litter if you go ahead anyway.</p>
+            </div>
+            <div class="spotlight-feature">
+              <h4>Mingle Mode</h4>
+              <p>Provide basic care for your whole roster at once and watch them interact as a group. Observation time actually means something in this game.</p>
+            </div>
+            <div class="spotlight-feature">
+              <h4>Build a roster worth being proud of</h4>
+              <p>No two cheetahs raise the same, so keep building up your studbook and make breeding choices that actually mean something.</p>
+            </div>
+          </div>
+
+          <p class="spotlight-note"><strong>How time works:</strong> the game runs on a semi-real timescale. Opening the app for the first time each day advances time, and your to-do list of required tasks (feed, exercise, clean) resets every 24 hours, with optional extras like play. Skipping days doesn't hurt your animals, so open it once a day or once a month, whatever fits.</p>
+
+          <div class="spotlight-goal">
+            <h4>What's the goal?</h4>
+            <p>Some cheetahs are born with a striped pattern on their back instead of the typical spots. These are called King Cheetahs. In 2012, it was discovered that this is caused by a recessive gene carried by both parents, about a 1 in 1,000 chance, with only around 10 estimated living in the wild today. The main goal of this game, other than being a silly little cat game, is to try and purposely breed a King Cheetah using simulated lab tests and real-world-inspired cheetah husbandry techniques.</p>
+            <p class="spotlight-tagline">Mostly it's just a silly little cat game, though.</p>
+          </div>
+
+          <div class="game-ctas">
+            <a class="btn btn--primary" href="https://play.google.com/apps/testing/com.FORK.cheetah" target="_blank" rel="noopener noreferrer">Join Closed Testing</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
     <section class="menu-section" id="games">
       <div class="section-head">
         <span class="eyebrow">On the menu</span>
@@ -756,7 +984,7 @@
         </details>
         <details class="faq-item">
           <summary>Do I need a separate sign-up for each app?</summary>
-          <p>No. One tester group membership (free) covers every app on this page, plus anything new that goes into testing later.</p>
+          <p>No. One tester group membership covers every app on this page, plus anything new that goes into testing later.</p>
         </details>
       </div>
     </section>
