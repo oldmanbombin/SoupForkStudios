@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SoupFork Studios: Apps</title>
-<meta name="description" content="SoupFork Studios. Suck It, Zombies!, KY State ProBaiter, and Pizza Police, in testing now.">
+<meta name="description" content="SoupFork Studios. Suck It, Zombies! and KY State ProBaiter, live now. Cheetah Breedah and Pizza Police, in testing.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -622,34 +622,6 @@
 
   .btn--sm{ font-size:.8rem; padding:.6em 1.05em; }
 
-  /* ---- section divider between live and in-testing apps ---- */
-
-  .menu-divider{
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin:0 0 3rem;
-  }
-  .menu-divider::before{
-    content:"";
-    position:absolute;
-    left:0;
-    right:0;
-    top:50%;
-    border-top:2px dashed rgba(28,23,18,0.2);
-  }
-  .menu-divider-label{
-    position:relative;
-    background:var(--cream);
-    padding:0 1.2rem;
-    font-size:.75rem;
-    font-weight:700;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--beard);
-  }
-
   /* ---- spinoff nested block ---- */
 
   .spinoff{
@@ -707,6 +679,12 @@
     --accent: #d4af37;
     --accent2: #f2cf5b;
     --shots-bg: rgba(0,0,0,0.2);
+  }
+  .game-card--cheetah{
+    --card-bg: #241a10;
+    --accent: #d9a441;
+    --accent2: #f0d38f;
+    --shots-bg: rgba(0,0,0,0.25);
   }
 
   /* ================= TESTER BAND ================= */
@@ -837,7 +815,7 @@
       <div class="text-side">
         <span class="eyebrow">Now serving</span>
         <h1>SoupFork<span class="studios">Studios</span></h1>
-        <p class="tagline">Homemade apps out of Kentucky.<br><em>Three</em> are in testing right now!</p>
+        <p class="tagline">Homemade apps out of Kentucky.<br><em>Three</em> are in testing right now.</p>
 
         <div class="pot" role="status" aria-label="Games in active testing">
           <span class="pot-label">Cooking</span>
@@ -848,7 +826,7 @@
 
         <p class="note">You must <a href="https://groups.google.com/g/soupforktest" target="_blank" rel="noopener noreferrer">join the tester group</a> before any testing link below will open. Join first, then come back and tap in.</p>
 
-        <a class="scroll-cue" href="#new-release">
+        <a class="scroll-cue" href="#games">
           See the apps
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg>
         </a>
@@ -856,14 +834,14 @@
     </div>
   </section>
 
-  <section class="tester-band">
-    <h2>Become a Tester</h2>
-    <p>You have to join the tester group before any "Closed Testing" or "Open Beta" link on this page will actually open. Join first, then come back and tap into whichever app you want to try.</p>
-    <a class="btn btn--primary" href="https://groups.google.com/g/soupforktest" target="_blank" rel="noopener noreferrer">Join the Tester Group</a>
-  </section>
+    <section class="tester-band">
+      <h2>Become a Tester</h2>
+      <p>You have to join the tester group before any "Closed Testing" or "Open Beta" link on this page will actually work. Join first, then come back and tap into whichever app you want to try.</p>
+      <a class="btn btn--primary" href="https://groups.google.com/g/soupforktest" target="_blank" rel="noopener noreferrer">Join the Tester Group</a>
+    </section>
 
   <main>
-    <section class="spotlight-section" id="new-release">
+    <section class="spotlight-section">
       <div class="section-head">
         <span class="eyebrow">New Release</span>
         <h2>Fresh Out of the Oven</h2>
@@ -873,58 +851,37 @@
         <div class="ribbon-box"><span class="ribbon">New</span></div>
         <div class="spotlight-inner">
           <div class="spotlight-head">
-            <h3>Cheetah Breedah</h3>
+            <h3>KY State ProBaiter</h3>
           </div>
-          <p class="spotlight-hook">Can you breed a King Cheetah?</p>
+          <p class="spotlight-hook">Know before you go.</p>
 
           <div class="spotlight-gallery">
-            <img src="cheetah-1.jpg" alt="Cheetah Breedah in-app tutorial overlay introducing the roster screen">
-            <img src="cheetah-2.jpg" alt="Cheetah Breedah roster screen with a cheetah named Asante and Genetics and Mingle Mode buttons">
-            <img src="cheetah-3.jpg" alt="Cheetah Breedah cheetah care screen showing exercise, hunger, and enclosure stats">
-            <img src="cheetah-4.jpg" alt="Cheetah Breedah weekly report screen with hormone level charts">
-            <img src="cheetah-5.jpg" alt="Cheetah Breedah genetics roster screen with View, Focus, and Pair options">
-            <img src="cheetah-6.jpg" alt="Cheetah Breedah detailed physical traits panel listing dozens of tracked genetic traits">
-            <img src="cheetah-7.jpg" alt="Cheetah Breedah research screen for buying lab equipment and hiring a specialist">
-            <img src="cheetah-8.jpg" alt="Cheetah Breedah Mingle Mode showing several cheetahs, including a striped King Cheetah pattern, moving around a shared enclosure">
+            <img src="probaiter-home.jpg" alt="KY State ProBaiter home screen listing favorite lakes">
+            <img src="probaiter-lake.jpg" alt="KY State ProBaiter Kentucky Lake conditions detail screen">
+            <img src="probaiter-trend.jpg" alt="KY State ProBaiter fishing forecast trend clock">
           </div>
 
           <div class="spotlight-body">
             <div class="spotlight-feature">
-              <h4>Raise and care for real personalities</h4>
-              <p>Feed them, exercise them, play with them, and keep their space clean. Every cat has its own personality, its own build, and its own needs, and neglecting them has real consequences.</p>
+              <h4>Real data, real lakes</h4>
+              <p>Live water levels, weather, and fishing forecasts pulled straight from USGS, NWS, TVA, and USACE data for dozens of lakes and rivers statewide.</p>
             </div>
             <div class="spotlight-feature">
-              <h4>Feel like a real scientist</h4>
-              <p>Certain information about your cats is locked behind things like number of interactions, time spent observed, and time spent with other animals. Use every option to learn everything you can, or just watch them play.</p>
+              <h4>Know the best time to fish</h4>
+              <p>Check today's fishing forecast before you load the boat, not after you're already on the water.</p>
             </div>
             <div class="spotlight-feature">
-              <h4>Watch them actually live in their space</h4>
-              <p>Cheetahs move around and pose based on their actual dispositions. Watch them mingle, or toss a ball and watch them chase it down and pounce on it.</p>
+              <h4>Favorite your spots</h4>
+              <p>Save the lakes and rivers you fish most for one-tap access to their current conditions.</p>
             </div>
             <div class="spotlight-feature">
-              <h4>Dive into real genetics</h4>
-              <p>The game tracks dozens of genetic traits and actual kinship between your animals. Breed two cheetahs that are too closely related and you'll get a warning, with real consequences for the litter if you go ahead anyway.</p>
+              <h4>Track the trends</h4>
+              <p>See 48-hour water level trends so you're not guessing what the lake's been doing.</p>
             </div>
-            <div class="spotlight-feature">
-              <h4>Mingle Mode</h4>
-              <p>Provide basic care for your whole roster at once and watch them interact as a group. Observation time actually means something in this game.</p>
-            </div>
-            <div class="spotlight-feature">
-              <h4>Build a roster worth being proud of</h4>
-              <p>No two cheetahs raise the same, so keep building up your studbook and make breeding choices that actually mean something.</p>
-            </div>
-          </div>
-
-          <p class="spotlight-note"><strong>Regular or Casual:</strong> Regular mode lets days pass in real time. Casual mode ignores days you don't open the app. Play Casual if you just want a digital pet, or Regular if you want to manage a small zoo.</p>
-
-          <div class="spotlight-goal">
-            <h4>What's the goal?</h4>
-            <p>Some cheetahs are born with a striped pattern on their back instead of the typical spots. These are called King Cheetahs. In 2012, it was discovered that this is caused by a recessive gene carried by both parents, about a 1 in 1,000 chance, with only around 10 estimated living in the wild today. The main goal of this game, other than being a silly little cat game, is to try and purposely breed a King Cheetah using simulated lab tests and real-world-inspired cheetah husbandry techniques.</p>
-            <p class="spotlight-tagline">Mostly it's just a silly little cat game, though.</p>
           </div>
 
           <div class="game-ctas">
-            <a class="btn btn--primary" href="https://play.google.com/apps/testing/com.FORK.cheetah" target="_blank" rel="noopener noreferrer">Join Closed Testing</a>
+            <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.FORK.kyprobaiter" target="_blank" rel="noopener noreferrer">Get it on Google Play</a>
           </div>
         </div>
       </article>
@@ -959,36 +916,29 @@
               <img src="ppe-gameplay.jpg" alt="SiZ Firehouse Pizza Edition gameplay showing the FH Pizza logo on the floor">
             </div>
             <div class="spinoff-info">
-              <span class="spinoff-label">Also available</span>
+              <span class="spinoff-label">Also in testing</span>
               <h4>SiZ: Firehouse Pizza Edition</h4>
               <p>A free promo demo built for Firehouse Pizza. Same zombie-clearing chaos, reskinned and let loose in the restaurant.</p>
-              <div class="game-ctas">
-                <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.FORK.sizpizza" target="_blank" rel="noopener noreferrer">Get it on Google Play</a>
-                <a class="btn btn--ghost btn--sm" href="https://play.google.com/apps/testing/com.FORK.sizpizza" target="_blank" rel="noopener noreferrer">Join the Demo Beta</a>
-              </div>
+              <a class="btn btn--ghost btn--sm" href="https://play.google.com/apps/testing/com.FORK.sizpizza" target="_blank" rel="noopener noreferrer">Join the Demo Beta</a>
             </div>
           </div>
         </div>
       </article>
 
-      <div class="menu-divider">
-        <span class="menu-divider-label">Still in Testing</span>
-      </div>
-
-      <!-- KY State ProBaiter -->
-      <article class="game-card game-card--probaiter">
+      <!-- Cheetah Breedah -->
+      <article class="game-card game-card--cheetah">
         <div class="game-shots">
-          <img class="portrait" src="probaiter-home.jpg" alt="KY State ProBaiter home screen listing favorite lakes">
-          <img class="portrait" src="probaiter-lake.jpg" alt="KY State ProBaiter Kentucky Lake conditions detail screen">
-          <img class="portrait" src="probaiter-trend.jpg" alt="KY State ProBaiter fishing forecast trend clock">
+          <img class="portrait" src="cheetah-2.jpg" alt="Cheetah Breedah roster screen with a cheetah named Asante and Genetics and Mingle Mode buttons">
+          <img class="portrait" src="cheetah-6.jpg" alt="Cheetah Breedah detailed physical traits panel listing dozens of tracked genetic traits">
+          <img class="portrait" src="cheetah-8.jpg" alt="Cheetah Breedah Mingle Mode showing several cheetahs, including a striped King Cheetah pattern, moving around a shared enclosure">
         </div>
         <div class="game-info">
-          <span class="game-badge">Closed testing</span>
-          <h3>KY State ProBaiter</h3>
-          <p class="game-tagline">Real-time fishing conditions for lakes and rivers across Kentucky.</p>
-          <p class="game-body">Live water levels, weather, and fishing forecasts pulled straight from USGS, NWS, TVA, and USACE data for dozens of lakes and rivers statewide. Favorite your spots, check the best time to fish today, and see 48-hour water level trends before you load the boat.</p>
+          <span class="game-badge">Open testing</span>
+          <h3>Cheetah Breedah</h3>
+          <p class="game-tagline">Can you breed a King Cheetah?</p>
+          <p class="game-body">Feed, exercise, and care for a roster of cheetahs, each with their own build and personality. Dig into real genetics, avoid inbreeding your studbook into a corner, and try to land an actual King Cheetah through simulated lab work. Regular mode runs on real time, Casual mode doesn't punish you for skipping a week.</p>
           <div class="game-ctas">
-            <a class="btn btn--primary" href="https://play.google.com/apps/testing/com.FORK.kyprobaiter" target="_blank" rel="noopener noreferrer">Join Closed Testing</a>
+            <a class="btn btn--primary" href="https://play.google.com/apps/testing/com.FORK.cheetah" target="_blank" rel="noopener noreferrer">Join Open Testing</a>
           </div>
         </div>
       </article>
@@ -1034,7 +984,7 @@
     </section>
   </main>
 
-  <footer>&copy; <span id="year"></span> SoupFork Studios</footer>
+  <footer>&copy; <span id="year"></span> Soup Fork Studios</footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
