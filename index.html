@@ -687,6 +687,34 @@
     --shots-bg: rgba(0,0,0,0.25);
   }
 
+  /* ---- section divider between live and in-testing apps ---- */
+
+  .menu-divider{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 0 3rem;
+  }
+  .menu-divider::before{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    top:50%;
+    border-top:2px dashed rgba(28,23,18,0.2);
+  }
+  .menu-divider-label{
+    position:relative;
+    background:var(--cream);
+    padding:0 1.2rem;
+    font-size:.75rem;
+    font-weight:700;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--beard);
+  }
+
   /* ================= TESTER BAND ================= */
 
   .tester-band{
@@ -815,7 +843,7 @@
       <div class="text-side">
         <span class="eyebrow">Now serving</span>
         <h1>SoupFork<span class="studios">Studios</span></h1>
-        <p class="tagline">Homemade apps out of Morgantown, Kentucky.
+        <p class="tagline">Homemade apps out of Morgantown, Kentucky.</p>
 
         <div class="pot" role="status" aria-label="Games in active testing">
           <span class="pot-label">Cooking</span>
@@ -922,6 +950,10 @@
           </div>
         </div>
       </article>
+
+      <div class="menu-divider">
+        <span class="menu-divider-label">Still in Testing</span>
+      </div>
 
       <!-- Cheetah Breedah -->
       <article class="game-card game-card--cheetah">
