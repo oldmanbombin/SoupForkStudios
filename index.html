@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SoupFork Studios: Apps</title>
-<meta name="description" content="SoupFork Studios. Suck It, Zombies! and KY State ProBaiter, live now. Cheetah Breedah and Pizza Police, in testing.">
+<meta name="description" content="SoupFork Studios. Suck It, Zombies! and KY State ProBaiter, live now. Cheetah Breedah, Motion Augmentat-inator, Rage Game Arcade, and Pizza Police, in testing.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -528,6 +528,24 @@
     width:auto;
   }
 
+  .game-shots-placeholder{
+    flex:1 1 340px;
+    min-width:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:1.4rem;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.25) 100%),
+      var(--shots-bg, rgba(0,0,0,0.15));
+    color:rgba(255,243,221,0.4);
+    font-size:.85rem;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    text-align:center;
+  }
+
   .game-info{
     flex:1 1 360px;
     padding:2.2rem 2.2rem 2.4rem;
@@ -583,6 +601,17 @@
     color:rgba(255,243,221,0.82);
   }
 
+  .game-feature-line{
+    font-size:.92rem;
+    line-height:1.5;
+    margin:0;
+    color:rgba(255,243,221,0.82);
+  }
+  .game-feature-line strong{
+    color:var(--accent2);
+    font-weight:700;
+  }
+
   .game-ctas{
     display:flex;
     flex-wrap:wrap;
@@ -618,6 +647,14 @@
     color:var(--cream);
   }
   .btn--ghost:hover{ border-color:var(--cream); }
+
+  .btn--disabled{
+    background:transparent;
+    border-color:rgba(255,243,221,0.3);
+    color:rgba(255,243,221,0.5);
+    cursor:default;
+  }
+  .btn--disabled:hover{ transform:none; }
 
   .btn--sm{ font-size:.8rem; padding:.6em 1.05em; }
 
@@ -683,6 +720,24 @@
     --card-bg: #241a10;
     --accent: #d9a441;
     --accent2: #f0d38f;
+    --shots-bg: rgba(0,0,0,0.25);
+  }
+  .game-card--motion{
+    --card-bg: #0d0d0d;
+    --accent: #e0332c;
+    --accent2: #ffffff;
+    --shots-bg: rgba(0,0,0,0.4);
+  }
+  .game-card--rage{
+    --card-bg: #1a1430;
+    --accent: #e2672a;
+    --accent2: #7fd4e0;
+    --shots-bg: rgba(0,0,0,0.3);
+  }
+  .game-card--nightmonitor{
+    --card-bg: #0f1a2e;
+    --accent: #6f8fd9;
+    --accent2: #cfe0ff;
     --shots-bg: rgba(0,0,0,0.25);
   }
 
@@ -822,7 +877,7 @@
 
   @media (max-width:720px){
     .game-card, .game-card:nth-of-type(even){ flex-direction:column; }
-    .game-shots{ order:-1; }
+    .game-shots, .game-shots-placeholder{ order:-1; }
   }
 </style>
 </head>
@@ -975,6 +1030,43 @@
         </div>
       </article>
 
+      <!-- Motion Augmentat-inator -->
+      <article class="game-card game-card--motion">
+        <div class="game-shots game-shots--landscape">
+          <img src="motion-yard.png" alt="Motion Augmentat-inator tracking an animal moving across a yard, outlined in red">
+          <img src="motion-dvd.png" alt="Motion Augmentat-inator highlighting a bouncing DVD logo on a TV screen">
+          <img src="motion-tuning.png" alt="Motion Augmentat-inator detection tuning sliders">
+        </div>
+        <div class="game-info">
+          <span class="game-badge">Open testing</span>
+          <h3>Motion Augmentat-inator</h3>
+          <p class="game-tagline">See what's really moving.</p>
+          <p class="game-body">Point your camera and let Motion Augmentat-inator flag movement the moment it happens. All detection runs right on your device. Nothing you record ever leaves your phone.</p>
+          <div class="game-ctas">
+            <a class="btn btn--primary" href="https://play.google.com/apps/testing/com.FORK.motion" target="_blank" rel="noopener noreferrer">Join Open Testing</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Rage Game Arcade -->
+      <article class="game-card game-card--rage">
+        <div class="game-shots game-shots--landscape">
+          <img src="rage-title.png" alt="Rage Game Arcade title screen">
+          <img src="rage-flow.png" alt="Rage Game Arcade flow-field dodging minigame">
+          <img src="rage-blocks.png" alt="Rage Game Arcade block-breaking minigame">
+          <img src="rage-cat.png" alt="Rage Game Arcade corner-cat minigame">
+        </div>
+        <div class="game-info">
+          <span class="game-badge">Open testing</span>
+          <h3>Rage Game Arcade</h3>
+          <p class="game-tagline">Old-school Flash-portal pain, four games deep.</p>
+          <p class="game-body">Four short, brutal minigames built in the spirit of old-school Flash game portals. Dodge, dash, and precision-tap your way through fast, frustrating, "one more try" challenges. No accounts, no ads, no internet required, just pick up and play.</p>
+          <div class="game-ctas">
+            <a class="btn btn--primary" href="https://play.google.com/apps/testing/com.FORK.rage" target="_blank" rel="noopener noreferrer">Join Open Testing</a>
+          </div>
+        </div>
+      </article>
+
       <!-- Pizza Police -->
       <article class="game-card game-card--pizzapolice">
         <div class="game-shots">
@@ -989,6 +1081,21 @@
           <p class="game-body">Somewhere at the table is the Pineapple Perpetrator. Scan the code, get your role, and figure out who it is before time runs out. Built for phones, no extra hardware, just your table and about five and a half minutes.</p>
           <div class="game-ctas">
             <a class="btn btn--primary" href="https://play.google.com/apps/testing/com.FORK.pizzapolice" target="_blank" rel="noopener noreferrer">Join Closed Testing</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Night Monitor -->
+      <article class="game-card game-card--nightmonitor">
+        <div class="game-shots-placeholder">Screenshots<br>coming soon</div>
+        <div class="game-info">
+          <span class="game-badge">Coming Soon</span>
+          <h3>Night Monitor</h3>
+          <p class="game-tagline">Sleep easy. We're listening for what matters.</p>
+          <p class="game-body">Night Monitor listens through the night, filters out normal background noise, and flags or saves the sounds worth waking up for, snoring included.</p>
+          <p class="game-feature-line"><strong>Hears past your own noise.</strong> Built-in echo cancellation strips out audio your phone is already playing, so what's coming through your speaker never gets picked up as a false alarm or buries a real one.</p>
+          <div class="game-ctas">
+            <a class="btn btn--disabled" href="#" onclick="return false;">Testing link coming soon</a>
           </div>
         </div>
       </article>
