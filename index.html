@@ -8,6 +8,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script>
+  (function(){
+    var t=null;
+    try{ t=localStorage.getItem('sf-theme'); }catch(e){}
+    if(!t){ t=(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'; }
+    document.documentElement.setAttribute('data-theme',t);
+  })();
+</script>
 <style>
   :root{
     --yolk: #f7a81b;
@@ -18,6 +26,24 @@
     --beard: #7a4a23;
     --bowl-red: #b6301f;
     --cream: #fff3dd;
+
+    /* page theme (below the hero) */
+    --page-bg: #fff3dd;
+    --text: #1c1712;
+    --text-soft: #7a4a23;
+    --box-bg: #ffffff;
+    --box-border: rgba(28,23,18,0.15);
+    --line: rgba(28,23,18,0.2);
+    --link: #b6301f;
+  }
+  :root[data-theme="dark"]{
+    --page-bg: #14110d;
+    --text: #f3e6cc;
+    --text-soft: #d3b98f;
+    --box-bg: #221c14;
+    --box-border: rgba(255,243,221,0.16);
+    --line: rgba(255,243,221,0.2);
+    --link: #ff8a70;
   }
 
   *{ box-sizing:border-box; }
@@ -467,7 +493,7 @@
   /* ================= GAMES SECTION ================= */
 
   main{
-    background:var(--cream);
+    background:var(--page-bg);
     position:relative;
   }
 
@@ -492,10 +518,10 @@
     font-weight:400;
     font-size:clamp(2.4rem, 5vw, 3.2rem);
     margin:.5em 0 .3em;
-    color:var(--ink);
+    color:var(--text);
   }
   .section-head p{
-    color:var(--beard);
+    color:var(--text-soft);
     font-size:1.02rem;
     line-height:1.5;
     margin:0;
@@ -809,19 +835,42 @@
   .testing-note{
     max-width:720px;
     margin:0 auto 2.5rem;
-    background:#fff;
-    border:2px dashed var(--bowl-red);
+    background:var(--box-bg);
+    border:2px dashed var(--link);
     border-radius:14px;
     padding:1.1rem 1.4rem;
     font-size:.95rem;
     line-height:1.55;
-    color:var(--beard);
+    color:var(--text-soft);
     text-align:center;
   }
   .testing-note a{
     font-weight:700;
-    color:var(--bowl-red);
+    color:var(--link);
   }
+
+
+  /* ---- sub-section headings inside "Our Apps" ---- */
+  .subsection-head{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+    margin:0 0 2rem;
+  }
+  .subsection-head::before, .subsection-head::after{
+    content:"";
+    flex:1;
+    border-top:2px dashed var(--line);
+  }
+  .subsection-head h3{
+    font-family:'Bangers', cursive;
+    font-weight:400;
+    letter-spacing:.04em;
+    font-size:clamp(1.7rem, 3.4vw, 2.1rem);
+    margin:0;
+    color:var(--text);
+  }
+  .subsection-head--testing{ margin-top:1rem; }
 
   /* ---- section divider between live and in-testing apps ---- */
 
@@ -842,7 +891,7 @@
   }
   .menu-divider-label{
     position:relative;
-    background:var(--cream);
+    background:var(--page-bg);
     padding:0 1.2rem;
     font-size:.75rem;
     font-weight:700;
@@ -896,7 +945,7 @@
     font-weight:400;
     font-size:clamp(2rem, 4.5vw, 2.6rem);
     margin:.5em 0 0;
-    color:var(--ink);
+    color:var(--text);
   }
 
   .faq-list{
@@ -907,8 +956,8 @@
   }
 
   .faq-item{
-    background:#fff;
-    border:2px solid rgba(28,23,18,0.15);
+    background:var(--box-bg);
+    border:2px solid var(--box-border);
     border-radius:14px;
     padding:.2rem 1.3rem;
   }
@@ -917,7 +966,7 @@
     list-style:none;
     padding:1.1rem 1.6rem 1.1rem 0;
     font-weight:700;
-    color:var(--ink);
+    color:var(--text);
     position:relative;
   }
   .faq-item summary::-webkit-details-marker{ display:none; }
@@ -929,18 +978,18 @@
     transform:translateY(-50%);
     font-size:1.4rem;
     font-weight:700;
-    color:var(--bowl-red);
+    color:var(--link);
   }
   .faq-item[open] summary::after{ content:"\2212"; }
   .faq-item p{
     margin:0 0 1.2rem;
-    color:var(--beard);
+    color:var(--text-soft);
     line-height:1.55;
     font-size:.96rem;
   }
   .faq-item a{
     font-weight:700;
-    color:var(--bowl-red);
+    color:var(--link);
   }
 
   /* ================= FOOTER ================= */
@@ -974,6 +1023,61 @@
     }
   }
 
+
+
+  /* ---- dark mode: dim the hero too ---- */
+  :root[data-theme="dark"] html, :root[data-theme="dark"] body{ background:#14110d; }
+  :root[data-theme="dark"] .hero{
+    background:
+      radial-gradient(circle at 18% 12%, rgba(247,168,27,0.16), transparent 45%),
+      radial-gradient(circle at 85% 82%, rgba(0,0,0,0.4), transparent 50%),
+      #1b150d;
+  }
+  :root[data-theme="dark"] .eyebrow{ background:var(--yolk); color:#1c1712; }
+  :root[data-theme="dark"] h1{
+    color:#fff3dd;
+    text-shadow:3px 3px 0 rgba(0,0,0,0.55), 6px 6px 0 rgba(0,0,0,0.3);
+  }
+  :root[data-theme="dark"] h1 .studios{
+    color:var(--yolk);
+    -webkit-text-stroke:2px #1c1712;
+    text-shadow:3px 3px 0 #7a4a23, 6px 6px 0 rgba(0,0,0,0.4);
+  }
+  :root[data-theme="dark"] .tagline{ color:rgba(255,243,221,0.88); }
+  :root[data-theme="dark"] .tagline em{ color:#ff8a70; }
+  :root[data-theme="dark"] .pot-label{ color:var(--yolk); }
+  :root[data-theme="dark"] .pot-track{ border-color:rgba(255,243,221,0.55); background:rgba(255,243,221,0.1); }
+  :root[data-theme="dark"] .scroll-cue{ color:#fff3dd; }
+  :root[data-theme="dark"] .logo-frame{
+    box-shadow:0 0 0 10px #1b150d, 0 0 0 13px var(--yolk), 0 30px 60px -20px rgba(0,0,0,0.7);
+  }
+
+  /* ---- dark mode toggle ---- */
+  .theme-toggle{
+    position:fixed;
+    top:1rem;
+    left:1rem;
+    z-index:5;
+    width:46px;
+    height:46px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    border:3px solid #1c1712;
+    background:#fff3dd;
+    color:#1c1712;
+    cursor:pointer;
+    box-shadow:0 5px 0 rgba(28,23,18,0.35);
+    transition:transform .15s ease;
+    padding:0;
+  }
+  .theme-toggle:hover{ transform:translateY(-2px); }
+  .theme-toggle svg{ width:22px; height:22px; }
+  .theme-toggle .icon-sun{ display:none; }
+  :root[data-theme="dark"] .theme-toggle .icon-sun{ display:block; }
+  :root[data-theme="dark"] .theme-toggle .icon-moon{ display:none; }
+
   /* ---- click-to-zoom screenshots ---- */
   .game-shots img, .spotlight-gallery img, .spinoff-shot img{ cursor:zoom-in; }
   .lightbox{
@@ -1004,6 +1108,11 @@
 </style>
 </head>
 <body>
+
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+  </button>
 
   <section class="hero">
     <div class="wrap">
@@ -1036,63 +1145,21 @@
         </a>
     </div>
 
-    <a class="scroll-cue" href="#spotlight" aria-label="Scroll to the latest release">
+    <a class="scroll-cue" href="#games" aria-label="Scroll to the apps">
       <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 9l8 8 8-8"/><path d="M4 15l8 8 8-8"/></svg>
     </a>
   </section>
 
   <main>
-    <section class="spotlight-section" id="spotlight">
-      <div class="section-head">
-        <span class="eyebrow">New Release</span>
-        <h2>Fresh Out of the Oven</h2>
-      </div>
-
-      <article class="spotlight-card">
-        <div class="ribbon-box"><span class="ribbon">New</span></div>
-        <div class="spotlight-inner">
-          <div class="spotlight-head">
-            <h3>KY State ProBaiter</h3>
-          </div>
-          <p class="spotlight-hook">Know before you go.</p>
-
-          <div class="spotlight-gallery">
-            <img src="probaiter-home.jpg" alt="KY State ProBaiter home screen listing favorite lakes">
-            <img src="probaiter-lake.jpg" alt="KY State ProBaiter Kentucky Lake conditions detail screen">
-            <img src="probaiter-trend.jpg" alt="KY State ProBaiter fishing forecast trend clock">
-          </div>
-
-          <div class="spotlight-body">
-            <div class="spotlight-feature">
-              <h4>Real data, real lakes</h4>
-              <p>Live water levels, weather, and fishing forecasts pulled straight from USGS, NWS, TVA, and USACE data for dozens of lakes and rivers statewide.</p>
-            </div>
-            <div class="spotlight-feature">
-              <h4>Know the best time to fish</h4>
-              <p>Check today's fishing forecast before you load the boat, not after you're already on the water.</p>
-            </div>
-            <div class="spotlight-feature">
-              <h4>Favorite your spots</h4>
-              <p>Save the lakes and rivers you fish most for one-tap access to their current conditions.</p>
-            </div>
-            <div class="spotlight-feature">
-              <h4>Track the trends</h4>
-              <p>See 48-hour water level trends so you're not guessing what the lake's been doing.</p>
-            </div>
-          </div>
-
-          <div class="game-ctas">
-            <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.FORK.kyprobaiter" target="_blank" rel="noopener noreferrer">Get it on Google Play</a>
-          </div>
-        </div>
-      </article>
-    </section>
-
     <section class="menu-section" id="games">
       <div class="section-head">
         <span class="eyebrow">On the menu</span>
-        <h2>Our Other Apps</h2>
+        <h2>Our Apps</h2>
         <p>Everything below is built by SoupFork Studios.<br>Some are ready to serve; some still in the kitchen.</p>
+      </div>
+
+      <div class="subsection-head">
+        <h3>Fully Released</h3>
       </div>
 
       <!-- Suck It, Zombies! -->
@@ -1129,8 +1196,29 @@
         </div>
       </article>
 
-      <div class="menu-divider">
-        <span class="menu-divider-label">Still in Testing</span>
+      <!-- KY State ProBaiter -->
+      <article class="game-card game-card--probaiter">
+        <div class="game-shots">
+          <img class="portrait" src="probaiter-home.jpg" alt="KY State ProBaiter home screen listing favorite lakes">
+          <img class="portrait" src="probaiter-lake.jpg" alt="KY State ProBaiter Kentucky Lake conditions detail screen">
+          <img class="portrait" src="probaiter-trend.jpg" alt="KY State ProBaiter fishing forecast trend clock">
+        </div>
+        <div class="game-info">
+          <span class="game-badge">Live on Google Play</span>
+          <h3>KY State ProBaiter</h3>
+          <p class="game-tagline">Know before you go.</p>
+          <p class="game-body">Live water levels, weather, and fishing forecasts pulled straight from USGS, NWS, TVA, and USACE data for dozens of lakes and rivers statewide.</p>
+          <p class="game-feature-line"><strong>Know the best time to fish.</strong> Check today's fishing forecast before you load the boat, not after you're already on the water.</p>
+          <p class="game-feature-line"><strong>Favorite your spots.</strong> Save the lakes and rivers you fish most for one-tap access to their current conditions.</p>
+          <p class="game-feature-line"><strong>Track the trends.</strong> See 48-hour water level trends so you're not guessing what the lake's been doing.</p>
+          <div class="game-ctas">
+            <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.FORK.kyprobaiter" target="_blank" rel="noopener noreferrer">Get it on Google Play</a>
+          </div>
+        </div>
+      </article>
+
+      <div class="subsection-head subsection-head--testing">
+        <h3>Early Access</h3>
       </div>
 
       <p class="testing-note"><b>Heads up:</b> Google charges testers full price to test apps that aren't finished.<br>If you want to try any paid app below for free, email <a href="mailto:Codes@SoupForkStudios.com">Codes@SoupForkStudios.com</a> and we'll send you a promo code.</p>
@@ -1176,61 +1264,6 @@
         </div>
       </article>
 
-      <!-- Cheetah Breedah -->
-      <article class="game-card game-card--cheetah">
-        <div class="game-shots">
-          <img class="portrait" src="cheetah-2.jpg" alt="Cheetah Breedah roster screen with a cheetah named Asante and Genetics and Mingle Mode buttons">
-          <img class="portrait" src="cheetah-6.jpg" alt="Cheetah Breedah detailed physical traits panel listing dozens of tracked genetic traits">
-          <img class="portrait" src="cheetah-8.jpg" alt="Cheetah Breedah Mingle Mode showing several cheetahs, including a striped King Cheetah pattern, moving around a shared enclosure">
-        </div>
-        <div class="game-info">
-          <span class="game-badge">Open testing</span>
-          <h3>Cheetah Breedah</h3>
-          <p class="game-tagline">Can you breed a King Cheetah?</p>
-          <p class="game-body">Feed, exercise, and care for a roster of cheetahs, each with their own build and personality. Dig into real genetics, avoid inbreeding your studbook into a corner, and try to land an actual King Cheetah through simulated lab work. Regular mode runs on real time, Casual mode doesn't punish you for skipping a week.</p>
-          <div class="game-ctas">
-            <a class="btn btn--primary" href="https://play.google.com/apps/testing/com.FORK.cheetah" target="_blank" rel="noopener noreferrer">Join Open Testing</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Motion Augmentat-inator -->
-      <article class="game-card game-card--motion">
-        <div class="game-shots game-shots--landscape">
-          <img src="motion-yard.png" alt="Motion Augmentat-inator tracking an animal moving across a yard, outlined in red">
-          <img src="motion-dvd.png" alt="Motion Augmentat-inator highlighting a bouncing DVD logo on a TV screen">
-          <img src="motion-tuning.png" alt="Motion Augmentat-inator detection tuning sliders">
-        </div>
-        <div class="game-info">
-          <span class="game-badge">Open testing</span>
-          <h3>Motion Augmentat-inator</h3>
-          <p class="game-tagline">See what's really moving.</p>
-          <p class="game-body">Point your camera and let Motion Augmentat-inator flag movement the moment it happens. All detection runs right on your device. Nothing you record ever leaves your phone.</p>
-          <div class="game-ctas">
-            <a class="btn btn--primary" href="https://play.google.com/apps/testing/com.FORK.motion" target="_blank" rel="noopener noreferrer">Join Open Testing</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Rage Game Arcade -->
-      <article class="game-card game-card--rage">
-        <div class="game-shots game-shots--landscape">
-          <img src="rage-title.png" alt="Rage Game Arcade title screen">
-          <img src="rage-flow.png" alt="Rage Game Arcade flow-field dodging minigame">
-          <img src="rage-blocks.png" alt="Rage Game Arcade block-breaking minigame">
-          <img src="rage-cat.png" alt="Rage Game Arcade corner-cat minigame">
-        </div>
-        <div class="game-info">
-          <span class="game-badge">Open testing</span>
-          <h3>Rage Game Arcade</h3>
-          <p class="game-tagline">Old-school Flash-portal pain, four games deep.</p>
-          <p class="game-body">Four short, brutal minigames built in the spirit of old-school Flash game portals. Dodge, dash, and precision-tap your way through fast, frustrating, "one more try" challenges. No accounts, no ads, no internet required, just pick up and play.</p>
-          <div class="game-ctas">
-            <a class="btn btn--primary" href="https://play.google.com/apps/testing/com.FORK.rage" target="_blank" rel="noopener noreferrer">Join Open Testing</a>
-          </div>
-        </div>
-      </article>
-
       <!-- Pizza Police -->
       <article class="game-card game-card--pizzapolice">
         <div class="game-shots">
@@ -1245,25 +1278,6 @@
           <p class="game-body">Somewhere at the table is the Pineapple Perpetrator. Scan the code, get your role, and figure out who it is before time runs out. Built for phones, no extra hardware, just your table and about five and a half minutes.</p>
           <div class="game-ctas">
             <a class="btn btn--primary" href="https://play.google.com/apps/testing/com.FORK.pizzapolice" target="_blank" rel="noopener noreferrer">Join Open Testing</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Night Monitor -->
-      <article class="game-card game-card--nightmonitor">
-        <div class="game-shots">
-          <img class="portrait" src="nm-monitoring.png" alt="Night Monitor actively monitoring, showing an unusual sound detected">
-          <img class="portrait" src="nm-calibrate.png" alt="Night Monitor delay calibration for device audio cancellation">
-          <img class="portrait" src="nm-events.png" alt="Night Monitor recorded events list with play and delete controls">
-        </div>
-        <div class="game-info">
-          <span class="game-badge">Open testing</span>
-          <h3>Night Monitor</h3>
-          <p class="game-tagline">Sleep easy. We're listening for what matters.</p>
-          <p class="game-body">Night Monitor listens through the night, filters out normal background noise, and flags or saves the sounds worth waking up for, snoring included.</p>
-          <p class="game-feature-line"><strong>Hears past your own noise.</strong> Built-in echo cancellation strips out audio your phone is already playing, so what's coming through your speaker never gets picked up as a false alarm or buries a real one.</p>
-          <div class="game-ctas">
-            <a class="btn btn--primary" href="https://play.google.com/apps/testing/com.FORK.zzzz" target="_blank" rel="noopener noreferrer">Join Open Testing</a>
           </div>
         </div>
       </article>
@@ -1324,6 +1338,80 @@
           </div>
         </div>
       </article>
+
+      <!-- Cheetah Breedah -->
+      <article class="game-card game-card--cheetah">
+        <div class="game-shots">
+          <img class="portrait" src="cheetah-2.jpg" alt="Cheetah Breedah roster screen with a cheetah named Asante and Genetics and Mingle Mode buttons">
+          <img class="portrait" src="cheetah-6.jpg" alt="Cheetah Breedah detailed physical traits panel listing dozens of tracked genetic traits">
+          <img class="portrait" src="cheetah-8.jpg" alt="Cheetah Breedah Mingle Mode showing several cheetahs, including a striped King Cheetah pattern, moving around a shared enclosure">
+        </div>
+        <div class="game-info">
+          <span class="game-badge">Open testing</span>
+          <h3>Cheetah Breedah</h3>
+          <p class="game-tagline">Can you breed a King Cheetah?</p>
+          <p class="game-body">Feed, exercise, and care for a roster of cheetahs, each with their own build and personality. Dig into real genetics, avoid inbreeding your studbook into a corner, and try to land an actual King Cheetah through simulated lab work. Regular mode runs on real time, Casual mode doesn't punish you for skipping a week.</p>
+          <div class="game-ctas">
+            <a class="btn btn--primary" href="https://play.google.com/apps/testing/com.FORK.cheetah" target="_blank" rel="noopener noreferrer">Join Open Testing</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Rage Game Arcade -->
+      <article class="game-card game-card--rage">
+        <div class="game-shots game-shots--landscape">
+          <img src="rage-title.png" alt="Rage Game Arcade title screen">
+          <img src="rage-flow.png" alt="Rage Game Arcade flow-field dodging minigame">
+          <img src="rage-blocks.png" alt="Rage Game Arcade block-breaking minigame">
+          <img src="rage-cat.png" alt="Rage Game Arcade corner-cat minigame">
+        </div>
+        <div class="game-info">
+          <span class="game-badge">Open testing</span>
+          <h3>Rage Game Arcade</h3>
+          <p class="game-tagline">Old-school Flash-portal pain, four games deep.</p>
+          <p class="game-body">Four short, brutal minigames built in the spirit of old-school Flash game portals. Dodge, dash, and precision-tap your way through fast, frustrating, "one more try" challenges. No accounts, no ads, no internet required, just pick up and play.</p>
+          <div class="game-ctas">
+            <a class="btn btn--primary" href="https://play.google.com/apps/testing/com.FORK.rage" target="_blank" rel="noopener noreferrer">Join Open Testing</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Motion Augmentat-inator -->
+      <article class="game-card game-card--motion">
+        <div class="game-shots game-shots--landscape">
+          <img src="motion-yard.png" alt="Motion Augmentat-inator tracking an animal moving across a yard, outlined in red">
+          <img src="motion-dvd.png" alt="Motion Augmentat-inator highlighting a bouncing DVD logo on a TV screen">
+          <img src="motion-tuning.png" alt="Motion Augmentat-inator detection tuning sliders">
+        </div>
+        <div class="game-info">
+          <span class="game-badge">Open testing</span>
+          <h3>Motion Augmentat-inator</h3>
+          <p class="game-tagline">See what's really moving.</p>
+          <p class="game-body">Point your camera and let Motion Augmentat-inator flag movement the moment it happens. All detection runs right on your device. Nothing you record ever leaves your phone.</p>
+          <div class="game-ctas">
+            <a class="btn btn--primary" href="https://play.google.com/apps/testing/com.FORK.motion" target="_blank" rel="noopener noreferrer">Join Open Testing</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Night Monitor -->
+      <article class="game-card game-card--nightmonitor">
+        <div class="game-shots">
+          <img class="portrait" src="nm-monitoring.png" alt="Night Monitor actively monitoring, showing an unusual sound detected">
+          <img class="portrait" src="nm-calibrate.png" alt="Night Monitor delay calibration for device audio cancellation">
+          <img class="portrait" src="nm-events.png" alt="Night Monitor recorded events list with play and delete controls">
+        </div>
+        <div class="game-info">
+          <span class="game-badge">Open testing</span>
+          <h3>Night Monitor</h3>
+          <p class="game-tagline">Sleep easy. We're listening for what matters.</p>
+          <p class="game-body">Night Monitor listens through the night, filters out normal background noise, and flags or saves the sounds worth waking up for, snoring included.</p>
+          <p class="game-feature-line"><strong>Hears past your own noise.</strong> Built-in echo cancellation strips out audio your phone is already playing, so what's coming through your speaker never gets picked up as a false alarm or buries a real one.</p>
+          <div class="game-ctas">
+            <a class="btn btn--primary" href="https://play.google.com/apps/testing/com.FORK.zzzz" target="_blank" rel="noopener noreferrer">Join Open Testing</a>
+          </div>
+        </div>
+      </article>
     </section>
 
     <section class="faq-section">
@@ -1361,6 +1449,14 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    (function(){
+      var btn=document.getElementById('themeToggle');
+      btn.addEventListener('click',function(){
+        var next=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';
+        document.documentElement.setAttribute('data-theme',next);
+        try{ localStorage.setItem('sf-theme',next); }catch(e){}
+      });
+    })();
     (function(){
       var box=document.createElement('div');
       box.className='lightbox';
