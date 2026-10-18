@@ -1025,6 +1025,47 @@
 
 
 
+
+  /* ---- price starburst stickers ---- */
+  .game-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+    min-height:2rem;
+  }
+  .price-badge{
+    width:92px;
+    height:92px;
+    flex:0 0 auto;
+    margin:-1.6rem -.3rem -1.9rem 0;
+    transform:rotate(-11deg);
+    filter:drop-shadow(0 4px 0 rgba(0,0,0,0.35));
+    pointer-events:none;
+  }
+  .price-badge text{
+    font-family:'Bangers', cursive;
+    text-anchor:middle;
+    fill:#fff;
+    stroke:#1c1712;
+    stroke-width:3.2px;
+    paint-order:stroke fill;
+    letter-spacing:.02em;
+  }
+  .price-badge .pb-top{ font-size:11px; fill:#ffe250; stroke-width:2.4px; }
+  .free-pill{
+    display:inline-block;
+    margin-left:.4em;
+    padding:.1em .55em;
+    border-radius:999px;
+    background:#1e8c3c;
+    color:#fff;
+    font-size:.62rem;
+    font-weight:800;
+    letter-spacing:.1em;
+    vertical-align:middle;
+  }
+
   /* ---- dark mode: dim the hero too ---- */
   :root[data-theme="dark"] html, :root[data-theme="dark"] body{ background:#14110d; }
   :root[data-theme="dark"] .hero{
@@ -1170,7 +1211,7 @@
           <img src="siz-armory.jpg" alt="Suck It, Zombies! weapon armory upgrade screen">
         </div>
         <div class="game-info">
-          <span class="game-badge">Live on Google Play</span>
+          <div class="game-head"><span class="game-badge">Live on Google Play</span><svg class="price-badge" viewBox="0 0 100 100" role="img" aria-label="Price: $0.99"><polygon points="50.0,1.0 55.8,9.4 63.8,3.0 67.0,12.7 76.5,8.8 76.8,19.0 87.0,17.9 84.5,27.8 94.6,29.6 89.3,38.4 98.5,43.0 91.0,50.0 98.5,57.0 89.3,61.6 94.6,70.4 84.5,72.2 87.0,82.1 76.8,81.0 76.5,91.2 67.0,87.3 63.8,97.0 55.8,90.6 50.0,99.0 44.2,90.6 36.2,97.0 33.0,87.3 23.5,91.2 23.2,81.0 13.0,82.1 15.5,72.2 5.4,70.4 10.7,61.6 1.5,57.0 9.0,50.0 1.5,43.0 10.7,38.4 5.4,29.6 15.5,27.8 13.0,17.9 23.2,19.0 23.5,8.8 33.0,12.7 36.2,3.0 44.2,9.4" fill="#1c1712"/><polygon points="50.0,4.0 55.5,11.9 63.0,5.9 66.0,15.0 74.9,11.3 75.2,20.9 84.8,19.9 82.4,29.2 91.8,30.9 86.9,39.2 95.5,43.5 88.5,50.0 95.5,56.5 86.9,60.8 91.8,69.1 82.4,70.8 84.8,80.1 75.2,79.1 74.9,88.7 66.0,85.0 63.0,94.1 55.5,88.1 50.0,96.0 44.5,88.1 37.0,94.1 34.0,85.0 25.1,88.7 24.8,79.1 15.2,80.1 17.6,70.8 8.2,69.1 13.1,60.8 4.5,56.5 11.5,50.0 4.5,43.5 13.1,39.2 8.2,30.9 17.6,29.2 15.2,19.9 24.8,20.9 25.1,11.3 34.0,15.0 37.0,5.9 44.5,11.9" fill="#d6231a"/><polygon points="50.0,13.0 54.4,19.3 60.4,14.5 62.9,21.8 70.0,18.9 70.3,26.6 78.0,25.8 76.1,33.2 83.7,34.6 79.7,41.3 86.6,44.7 81.0,50.0 86.6,55.3 79.7,58.7 83.7,65.4 76.1,66.8 78.0,74.2 70.3,73.4 70.0,81.1 62.9,78.2 60.4,85.5 54.4,80.7 50.0,87.0 45.6,80.7 39.6,85.5 37.1,78.2 30.0,81.1 29.7,73.4 22.0,74.2 23.9,66.8 16.3,65.4 20.3,58.7 13.4,55.3 19.0,50.0 13.4,44.7 20.3,41.3 16.3,34.6 23.9,33.2 22.0,25.8 29.7,26.6 30.0,18.9 37.1,21.8 39.6,14.5 45.6,19.3" fill="none" stroke="#ffe250" stroke-width="1.4"/><text x="50" y="35" class="pb-top">ONLY</text><text x="50" y="63" class="pb-price" style="font-size:24px">$0.99</text></svg></div>
           <h3>Suck It, Zombies!</h3>
           <p class="game-tagline">Twin-stick zombie survival, built for couch or LAN co-op.</p>
           <p class="game-body">Pick your sucker, grab a gun from the Armory, and hold the line. Full weapon upgrade trees, unlockable abilities, and local multiplayer for when you need backup.</p>
@@ -1184,7 +1225,7 @@
               <img src="ppe-gameplay.jpg" alt="SiZ Firehouse Pizza Edition gameplay showing the FH Pizza logo on the floor">
             </div>
             <div class="spinoff-info">
-              <span class="spinoff-label">Also available</span>
+              <span class="spinoff-label">Also available</span> <span class="free-pill">FREE</span>
               <h4>SiZ: Firehouse Pizza Edition</h4>
               <p>A free promo demo built for Firehouse Pizza. Same zombie-clearing chaos, reskinned and let loose in the restaurant.</p>
               <div class="game-ctas">
@@ -1204,7 +1245,7 @@
           <img class="portrait" src="probaiter-trend.jpg" alt="KY State ProBaiter fishing forecast trend clock">
         </div>
         <div class="game-info">
-          <span class="game-badge">Live on Google Play</span>
+          <div class="game-head"><span class="game-badge">Live on Google Play</span><svg class="price-badge" viewBox="0 0 100 100" role="img" aria-label="Price: FREE"><polygon points="50.0,1.0 55.8,9.4 63.8,3.0 67.0,12.7 76.5,8.8 76.8,19.0 87.0,17.9 84.5,27.8 94.6,29.6 89.3,38.4 98.5,43.0 91.0,50.0 98.5,57.0 89.3,61.6 94.6,70.4 84.5,72.2 87.0,82.1 76.8,81.0 76.5,91.2 67.0,87.3 63.8,97.0 55.8,90.6 50.0,99.0 44.2,90.6 36.2,97.0 33.0,87.3 23.5,91.2 23.2,81.0 13.0,82.1 15.5,72.2 5.4,70.4 10.7,61.6 1.5,57.0 9.0,50.0 1.5,43.0 10.7,38.4 5.4,29.6 15.5,27.8 13.0,17.9 23.2,19.0 23.5,8.8 33.0,12.7 36.2,3.0 44.2,9.4" fill="#1c1712"/><polygon points="50.0,4.0 55.5,11.9 63.0,5.9 66.0,15.0 74.9,11.3 75.2,20.9 84.8,19.9 82.4,29.2 91.8,30.9 86.9,39.2 95.5,43.5 88.5,50.0 95.5,56.5 86.9,60.8 91.8,69.1 82.4,70.8 84.8,80.1 75.2,79.1 74.9,88.7 66.0,85.0 63.0,94.1 55.5,88.1 50.0,96.0 44.5,88.1 37.0,94.1 34.0,85.0 25.1,88.7 24.8,79.1 15.2,80.1 17.6,70.8 8.2,69.1 13.1,60.8 4.5,56.5 11.5,50.0 4.5,43.5 13.1,39.2 8.2,30.9 17.6,29.2 15.2,19.9 24.8,20.9 25.1,11.3 34.0,15.0 37.0,5.9 44.5,11.9" fill="#1e8c3c"/><polygon points="50.0,13.0 54.4,19.3 60.4,14.5 62.9,21.8 70.0,18.9 70.3,26.6 78.0,25.8 76.1,33.2 83.7,34.6 79.7,41.3 86.6,44.7 81.0,50.0 86.6,55.3 79.7,58.7 83.7,65.4 76.1,66.8 78.0,74.2 70.3,73.4 70.0,81.1 62.9,78.2 60.4,85.5 54.4,80.7 50.0,87.0 45.6,80.7 39.6,85.5 37.1,78.2 30.0,81.1 29.7,73.4 22.0,74.2 23.9,66.8 16.3,65.4 20.3,58.7 13.4,55.3 19.0,50.0 13.4,44.7 20.3,41.3 16.3,34.6 23.9,33.2 22.0,25.8 29.7,26.6 30.0,18.9 37.1,21.8 39.6,14.5 45.6,19.3" fill="none" stroke="#ffec78" stroke-width="1.4"/><text x="50" y="58" class="pb-price" style="font-size:27px">FREE</text></svg></div>
           <h3>KY State ProBaiter</h3>
           <p class="game-tagline">Know before you go.</p>
           <p class="game-body">Live water levels, weather, and fishing forecasts pulled straight from USGS, NWS, TVA, and USACE data for dozens of lakes and rivers statewide.</p>
@@ -1232,7 +1273,7 @@
           <img class="portrait" src="chernobot-sample.jpg" alt="Chernobot air sample screen with a needle to keep in the green zone">
         </div>
         <div class="game-info">
-          <span class="game-badge">Open testing</span>
+          <div class="game-head"><span class="game-badge">Open testing</span><svg class="price-badge" viewBox="0 0 100 100" role="img" aria-label="Price: $0.99"><polygon points="50.0,1.0 55.8,9.4 63.8,3.0 67.0,12.7 76.5,8.8 76.8,19.0 87.0,17.9 84.5,27.8 94.6,29.6 89.3,38.4 98.5,43.0 91.0,50.0 98.5,57.0 89.3,61.6 94.6,70.4 84.5,72.2 87.0,82.1 76.8,81.0 76.5,91.2 67.0,87.3 63.8,97.0 55.8,90.6 50.0,99.0 44.2,90.6 36.2,97.0 33.0,87.3 23.5,91.2 23.2,81.0 13.0,82.1 15.5,72.2 5.4,70.4 10.7,61.6 1.5,57.0 9.0,50.0 1.5,43.0 10.7,38.4 5.4,29.6 15.5,27.8 13.0,17.9 23.2,19.0 23.5,8.8 33.0,12.7 36.2,3.0 44.2,9.4" fill="#1c1712"/><polygon points="50.0,4.0 55.5,11.9 63.0,5.9 66.0,15.0 74.9,11.3 75.2,20.9 84.8,19.9 82.4,29.2 91.8,30.9 86.9,39.2 95.5,43.5 88.5,50.0 95.5,56.5 86.9,60.8 91.8,69.1 82.4,70.8 84.8,80.1 75.2,79.1 74.9,88.7 66.0,85.0 63.0,94.1 55.5,88.1 50.0,96.0 44.5,88.1 37.0,94.1 34.0,85.0 25.1,88.7 24.8,79.1 15.2,80.1 17.6,70.8 8.2,69.1 13.1,60.8 4.5,56.5 11.5,50.0 4.5,43.5 13.1,39.2 8.2,30.9 17.6,29.2 15.2,19.9 24.8,20.9 25.1,11.3 34.0,15.0 37.0,5.9 44.5,11.9" fill="#d6231a"/><polygon points="50.0,13.0 54.4,19.3 60.4,14.5 62.9,21.8 70.0,18.9 70.3,26.6 78.0,25.8 76.1,33.2 83.7,34.6 79.7,41.3 86.6,44.7 81.0,50.0 86.6,55.3 79.7,58.7 83.7,65.4 76.1,66.8 78.0,74.2 70.3,73.4 70.0,81.1 62.9,78.2 60.4,85.5 54.4,80.7 50.0,87.0 45.6,80.7 39.6,85.5 37.1,78.2 30.0,81.1 29.7,73.4 22.0,74.2 23.9,66.8 16.3,65.4 20.3,58.7 13.4,55.3 19.0,50.0 13.4,44.7 20.3,41.3 16.3,34.6 23.9,33.2 22.0,25.8 29.7,26.6 30.0,18.9 37.1,21.8 39.6,14.5 45.6,19.3" fill="none" stroke="#ffe250" stroke-width="1.4"/><text x="50" y="35" class="pb-top">ONLY</text><text x="50" y="63" class="pb-price" style="font-size:24px">$0.99</text></svg></div>
           <h3>Chernobot</h3>
           <p class="game-tagline">Your shift starts at the dock. You are the ROV.</p>
           <p class="game-body">The facility is dark, the Geiger counter is clicking, and the work orders are waiting. Drive your tracked ROV through a maze of rooms and halls, follow the glowing lines on the floor to the next job, keep one eye on your battery, and clock out at the dock when the work is done.</p>
@@ -1253,7 +1294,7 @@
           <img class="portrait" src="puppy-news.jpg" alt="Pizza Puppy newspaper between rounds reporting on the cat burglar">
         </div>
         <div class="game-info">
-          <span class="game-badge">Open testing</span>
+          <div class="game-head"><span class="game-badge">Open testing</span><svg class="price-badge" viewBox="0 0 100 100" role="img" aria-label="Price: $0.99"><polygon points="50.0,1.0 55.8,9.4 63.8,3.0 67.0,12.7 76.5,8.8 76.8,19.0 87.0,17.9 84.5,27.8 94.6,29.6 89.3,38.4 98.5,43.0 91.0,50.0 98.5,57.0 89.3,61.6 94.6,70.4 84.5,72.2 87.0,82.1 76.8,81.0 76.5,91.2 67.0,87.3 63.8,97.0 55.8,90.6 50.0,99.0 44.2,90.6 36.2,97.0 33.0,87.3 23.5,91.2 23.2,81.0 13.0,82.1 15.5,72.2 5.4,70.4 10.7,61.6 1.5,57.0 9.0,50.0 1.5,43.0 10.7,38.4 5.4,29.6 15.5,27.8 13.0,17.9 23.2,19.0 23.5,8.8 33.0,12.7 36.2,3.0 44.2,9.4" fill="#1c1712"/><polygon points="50.0,4.0 55.5,11.9 63.0,5.9 66.0,15.0 74.9,11.3 75.2,20.9 84.8,19.9 82.4,29.2 91.8,30.9 86.9,39.2 95.5,43.5 88.5,50.0 95.5,56.5 86.9,60.8 91.8,69.1 82.4,70.8 84.8,80.1 75.2,79.1 74.9,88.7 66.0,85.0 63.0,94.1 55.5,88.1 50.0,96.0 44.5,88.1 37.0,94.1 34.0,85.0 25.1,88.7 24.8,79.1 15.2,80.1 17.6,70.8 8.2,69.1 13.1,60.8 4.5,56.5 11.5,50.0 4.5,43.5 13.1,39.2 8.2,30.9 17.6,29.2 15.2,19.9 24.8,20.9 25.1,11.3 34.0,15.0 37.0,5.9 44.5,11.9" fill="#d6231a"/><polygon points="50.0,13.0 54.4,19.3 60.4,14.5 62.9,21.8 70.0,18.9 70.3,26.6 78.0,25.8 76.1,33.2 83.7,34.6 79.7,41.3 86.6,44.7 81.0,50.0 86.6,55.3 79.7,58.7 83.7,65.4 76.1,66.8 78.0,74.2 70.3,73.4 70.0,81.1 62.9,78.2 60.4,85.5 54.4,80.7 50.0,87.0 45.6,80.7 39.6,85.5 37.1,78.2 30.0,81.1 29.7,73.4 22.0,74.2 23.9,66.8 16.3,65.4 20.3,58.7 13.4,55.3 19.0,50.0 13.4,44.7 20.3,41.3 16.3,34.6 23.9,33.2 22.0,25.8 29.7,26.6 30.0,18.9 37.1,21.8 39.6,14.5 45.6,19.3" fill="none" stroke="#ffe250" stroke-width="1.4"/><text x="50" y="35" class="pb-top">ONLY</text><text x="50" y="63" class="pb-price" style="font-size:24px">$0.99</text></svg></div>
           <h3>Pizza Puppy</h3>
           <p class="game-tagline">Sneak. Snack. Get chubby.</p>
           <p class="game-body">The pepperoni is in the storage room, the staff are in the way, and you are a very small, very hungry puppy. Slip between the tables, dodge the cooks and guards, and raid the pepperoni. Every win makes the puppy rounder and slower.</p>
@@ -1272,7 +1313,7 @@
           <img class="portrait" src="pp-witness.jpg" alt="Pizza Police - Witness role figurine">
         </div>
         <div class="game-info">
-          <span class="game-badge">Open testing</span>
+          <div class="game-head"><span class="game-badge">Open testing</span><svg class="price-badge" viewBox="0 0 100 100" role="img" aria-label="Price: $0.99"><polygon points="50.0,1.0 55.8,9.4 63.8,3.0 67.0,12.7 76.5,8.8 76.8,19.0 87.0,17.9 84.5,27.8 94.6,29.6 89.3,38.4 98.5,43.0 91.0,50.0 98.5,57.0 89.3,61.6 94.6,70.4 84.5,72.2 87.0,82.1 76.8,81.0 76.5,91.2 67.0,87.3 63.8,97.0 55.8,90.6 50.0,99.0 44.2,90.6 36.2,97.0 33.0,87.3 23.5,91.2 23.2,81.0 13.0,82.1 15.5,72.2 5.4,70.4 10.7,61.6 1.5,57.0 9.0,50.0 1.5,43.0 10.7,38.4 5.4,29.6 15.5,27.8 13.0,17.9 23.2,19.0 23.5,8.8 33.0,12.7 36.2,3.0 44.2,9.4" fill="#1c1712"/><polygon points="50.0,4.0 55.5,11.9 63.0,5.9 66.0,15.0 74.9,11.3 75.2,20.9 84.8,19.9 82.4,29.2 91.8,30.9 86.9,39.2 95.5,43.5 88.5,50.0 95.5,56.5 86.9,60.8 91.8,69.1 82.4,70.8 84.8,80.1 75.2,79.1 74.9,88.7 66.0,85.0 63.0,94.1 55.5,88.1 50.0,96.0 44.5,88.1 37.0,94.1 34.0,85.0 25.1,88.7 24.8,79.1 15.2,80.1 17.6,70.8 8.2,69.1 13.1,60.8 4.5,56.5 11.5,50.0 4.5,43.5 13.1,39.2 8.2,30.9 17.6,29.2 15.2,19.9 24.8,20.9 25.1,11.3 34.0,15.0 37.0,5.9 44.5,11.9" fill="#d6231a"/><polygon points="50.0,13.0 54.4,19.3 60.4,14.5 62.9,21.8 70.0,18.9 70.3,26.6 78.0,25.8 76.1,33.2 83.7,34.6 79.7,41.3 86.6,44.7 81.0,50.0 86.6,55.3 79.7,58.7 83.7,65.4 76.1,66.8 78.0,74.2 70.3,73.4 70.0,81.1 62.9,78.2 60.4,85.5 54.4,80.7 50.0,87.0 45.6,80.7 39.6,85.5 37.1,78.2 30.0,81.1 29.7,73.4 22.0,74.2 23.9,66.8 16.3,65.4 20.3,58.7 13.4,55.3 19.0,50.0 13.4,44.7 20.3,41.3 16.3,34.6 23.9,33.2 22.0,25.8 29.7,26.6 30.0,18.9 37.1,21.8 39.6,14.5 45.6,19.3" fill="none" stroke="#ffe250" stroke-width="1.4"/><text x="50" y="35" class="pb-top">ONLY</text><text x="50" y="63" class="pb-price" style="font-size:24px">$0.99</text></svg></div>
           <h3>Pizza Police</h3>
           <p class="game-tagline">A social deduction app built for restaurant tables.</p>
           <p class="game-body">Somewhere at the table is the Pineapple Perpetrator. Scan the code, get your role, and figure out who it is before time runs out. Built for phones, no extra hardware, just your table and about five and a half minutes.</p>
@@ -1290,7 +1331,7 @@
           <img class="portrait" src="bloomwater-night.jpg" alt="Bloomwater at night after the daily goal is hit, showing a sleeping rainbow flower glowing under the moon with confetti falling">
         </div>
         <div class="game-info">
-          <span class="game-badge">Open testing</span>
+          <div class="game-head"><span class="game-badge">Open testing</span><svg class="price-badge" viewBox="0 0 100 100" role="img" aria-label="Price: $0.99"><polygon points="50.0,1.0 55.8,9.4 63.8,3.0 67.0,12.7 76.5,8.8 76.8,19.0 87.0,17.9 84.5,27.8 94.6,29.6 89.3,38.4 98.5,43.0 91.0,50.0 98.5,57.0 89.3,61.6 94.6,70.4 84.5,72.2 87.0,82.1 76.8,81.0 76.5,91.2 67.0,87.3 63.8,97.0 55.8,90.6 50.0,99.0 44.2,90.6 36.2,97.0 33.0,87.3 23.5,91.2 23.2,81.0 13.0,82.1 15.5,72.2 5.4,70.4 10.7,61.6 1.5,57.0 9.0,50.0 1.5,43.0 10.7,38.4 5.4,29.6 15.5,27.8 13.0,17.9 23.2,19.0 23.5,8.8 33.0,12.7 36.2,3.0 44.2,9.4" fill="#1c1712"/><polygon points="50.0,4.0 55.5,11.9 63.0,5.9 66.0,15.0 74.9,11.3 75.2,20.9 84.8,19.9 82.4,29.2 91.8,30.9 86.9,39.2 95.5,43.5 88.5,50.0 95.5,56.5 86.9,60.8 91.8,69.1 82.4,70.8 84.8,80.1 75.2,79.1 74.9,88.7 66.0,85.0 63.0,94.1 55.5,88.1 50.0,96.0 44.5,88.1 37.0,94.1 34.0,85.0 25.1,88.7 24.8,79.1 15.2,80.1 17.6,70.8 8.2,69.1 13.1,60.8 4.5,56.5 11.5,50.0 4.5,43.5 13.1,39.2 8.2,30.9 17.6,29.2 15.2,19.9 24.8,20.9 25.1,11.3 34.0,15.0 37.0,5.9 44.5,11.9" fill="#d6231a"/><polygon points="50.0,13.0 54.4,19.3 60.4,14.5 62.9,21.8 70.0,18.9 70.3,26.6 78.0,25.8 76.1,33.2 83.7,34.6 79.7,41.3 86.6,44.7 81.0,50.0 86.6,55.3 79.7,58.7 83.7,65.4 76.1,66.8 78.0,74.2 70.3,73.4 70.0,81.1 62.9,78.2 60.4,85.5 54.4,80.7 50.0,87.0 45.6,80.7 39.6,85.5 37.1,78.2 30.0,81.1 29.7,73.4 22.0,74.2 23.9,66.8 16.3,65.4 20.3,58.7 13.4,55.3 19.0,50.0 13.4,44.7 20.3,41.3 16.3,34.6 23.9,33.2 22.0,25.8 29.7,26.6 30.0,18.9 37.1,21.8 39.6,14.5 45.6,19.3" fill="none" stroke="#ffe250" stroke-width="1.4"/><text x="50" y="35" class="pb-top">ONLY</text><text x="50" y="63" class="pb-price" style="font-size:24px">$0.99</text></svg></div>
           <h3>Bloomwater</h3>
           <p class="game-tagline">Every glass grows something new.</p>
           <p class="game-body">Log your water and watch a one-of-a-kind flower grow from it, seed and species picked fresh every time, drawn right on your device. Skip the paywalled plant menus, hit your goal, and your garden fills in on its own.</p>
@@ -1309,7 +1350,7 @@
           <img class="portrait" src="fwiends-quiz.png" alt="Imaginary Fwiends personality quiz asking how many eyes to give your new friend">
         </div>
         <div class="game-info">
-          <span class="game-badge">Open testing</span>
+          <div class="game-head"><span class="game-badge">Open testing</span><svg class="price-badge" viewBox="0 0 100 100" role="img" aria-label="Price: $0.99"><polygon points="50.0,1.0 55.8,9.4 63.8,3.0 67.0,12.7 76.5,8.8 76.8,19.0 87.0,17.9 84.5,27.8 94.6,29.6 89.3,38.4 98.5,43.0 91.0,50.0 98.5,57.0 89.3,61.6 94.6,70.4 84.5,72.2 87.0,82.1 76.8,81.0 76.5,91.2 67.0,87.3 63.8,97.0 55.8,90.6 50.0,99.0 44.2,90.6 36.2,97.0 33.0,87.3 23.5,91.2 23.2,81.0 13.0,82.1 15.5,72.2 5.4,70.4 10.7,61.6 1.5,57.0 9.0,50.0 1.5,43.0 10.7,38.4 5.4,29.6 15.5,27.8 13.0,17.9 23.2,19.0 23.5,8.8 33.0,12.7 36.2,3.0 44.2,9.4" fill="#1c1712"/><polygon points="50.0,4.0 55.5,11.9 63.0,5.9 66.0,15.0 74.9,11.3 75.2,20.9 84.8,19.9 82.4,29.2 91.8,30.9 86.9,39.2 95.5,43.5 88.5,50.0 95.5,56.5 86.9,60.8 91.8,69.1 82.4,70.8 84.8,80.1 75.2,79.1 74.9,88.7 66.0,85.0 63.0,94.1 55.5,88.1 50.0,96.0 44.5,88.1 37.0,94.1 34.0,85.0 25.1,88.7 24.8,79.1 15.2,80.1 17.6,70.8 8.2,69.1 13.1,60.8 4.5,56.5 11.5,50.0 4.5,43.5 13.1,39.2 8.2,30.9 17.6,29.2 15.2,19.9 24.8,20.9 25.1,11.3 34.0,15.0 37.0,5.9 44.5,11.9" fill="#d6231a"/><polygon points="50.0,13.0 54.4,19.3 60.4,14.5 62.9,21.8 70.0,18.9 70.3,26.6 78.0,25.8 76.1,33.2 83.7,34.6 79.7,41.3 86.6,44.7 81.0,50.0 86.6,55.3 79.7,58.7 83.7,65.4 76.1,66.8 78.0,74.2 70.3,73.4 70.0,81.1 62.9,78.2 60.4,85.5 54.4,80.7 50.0,87.0 45.6,80.7 39.6,85.5 37.1,78.2 30.0,81.1 29.7,73.4 22.0,74.2 23.9,66.8 16.3,65.4 20.3,58.7 13.4,55.3 19.0,50.0 13.4,44.7 20.3,41.3 16.3,34.6 23.9,33.2 22.0,25.8 29.7,26.6 30.0,18.9 37.1,21.8 39.6,14.5 45.6,19.3" fill="none" stroke="#ffe250" stroke-width="1.4"/><text x="50" y="35" class="pb-top">ONLY</text><text x="50" y="63" class="pb-price" style="font-size:24px">$0.99</text></svg></div>
           <h3>Imaginary Fwiends</h3>
           <p class="game-tagline">Take the quiz, meet your new best friend.</p>
           <p class="game-body">Answer a goofy personality quiz and watch your Fwiend come to life in its own little room, blinking, breathing, and mumbling back at you in its own made-up voice. No two come out the same.</p>
@@ -1328,7 +1369,7 @@
           <img class="portrait" src="monsters-quiz.png" alt="Imaginary Monsters survey asking what the player's plan is when the fire alarm goes off">
         </div>
         <div class="game-info">
-          <span class="game-badge">Open testing</span>
+          <div class="game-head"><span class="game-badge">Open testing</span><svg class="price-badge" viewBox="0 0 100 100" role="img" aria-label="Price: $0.99"><polygon points="50.0,1.0 55.8,9.4 63.8,3.0 67.0,12.7 76.5,8.8 76.8,19.0 87.0,17.9 84.5,27.8 94.6,29.6 89.3,38.4 98.5,43.0 91.0,50.0 98.5,57.0 89.3,61.6 94.6,70.4 84.5,72.2 87.0,82.1 76.8,81.0 76.5,91.2 67.0,87.3 63.8,97.0 55.8,90.6 50.0,99.0 44.2,90.6 36.2,97.0 33.0,87.3 23.5,91.2 23.2,81.0 13.0,82.1 15.5,72.2 5.4,70.4 10.7,61.6 1.5,57.0 9.0,50.0 1.5,43.0 10.7,38.4 5.4,29.6 15.5,27.8 13.0,17.9 23.2,19.0 23.5,8.8 33.0,12.7 36.2,3.0 44.2,9.4" fill="#1c1712"/><polygon points="50.0,4.0 55.5,11.9 63.0,5.9 66.0,15.0 74.9,11.3 75.2,20.9 84.8,19.9 82.4,29.2 91.8,30.9 86.9,39.2 95.5,43.5 88.5,50.0 95.5,56.5 86.9,60.8 91.8,69.1 82.4,70.8 84.8,80.1 75.2,79.1 74.9,88.7 66.0,85.0 63.0,94.1 55.5,88.1 50.0,96.0 44.5,88.1 37.0,94.1 34.0,85.0 25.1,88.7 24.8,79.1 15.2,80.1 17.6,70.8 8.2,69.1 13.1,60.8 4.5,56.5 11.5,50.0 4.5,43.5 13.1,39.2 8.2,30.9 17.6,29.2 15.2,19.9 24.8,20.9 25.1,11.3 34.0,15.0 37.0,5.9 44.5,11.9" fill="#d6231a"/><polygon points="50.0,13.0 54.4,19.3 60.4,14.5 62.9,21.8 70.0,18.9 70.3,26.6 78.0,25.8 76.1,33.2 83.7,34.6 79.7,41.3 86.6,44.7 81.0,50.0 86.6,55.3 79.7,58.7 83.7,65.4 76.1,66.8 78.0,74.2 70.3,73.4 70.0,81.1 62.9,78.2 60.4,85.5 54.4,80.7 50.0,87.0 45.6,80.7 39.6,85.5 37.1,78.2 30.0,81.1 29.7,73.4 22.0,74.2 23.9,66.8 16.3,65.4 20.3,58.7 13.4,55.3 19.0,50.0 13.4,44.7 20.3,41.3 16.3,34.6 23.9,33.2 22.0,25.8 29.7,26.6 30.0,18.9 37.1,21.8 39.6,14.5 45.6,19.3" fill="none" stroke="#ffe250" stroke-width="1.4"/><text x="50" y="35" class="pb-top">ONLY</text><text x="50" y="63" class="pb-price" style="font-size:24px">$0.99</text></svg></div>
           <h3>Imaginary Monsters</h3>
           <p class="game-tagline">Terrifying, but make it cute.</p>
           <p class="game-body">Take the Monster Survey and summon a nightmare creature with a weirdly sweet personality. Every monster's body is rolled from scratch, humanoid, beastly, blobby, or something in between, and it moves into your room to hang out.</p>
@@ -1347,7 +1388,7 @@
           <img class="portrait" src="cheetah-8.jpg" alt="Cheetah Breedah Mingle Mode showing several cheetahs, including a striped King Cheetah pattern, moving around a shared enclosure">
         </div>
         <div class="game-info">
-          <span class="game-badge">Open testing</span>
+          <div class="game-head"><span class="game-badge">Open testing</span><svg class="price-badge" viewBox="0 0 100 100" role="img" aria-label="Price: $2.99"><polygon points="50.0,1.0 55.8,9.4 63.8,3.0 67.0,12.7 76.5,8.8 76.8,19.0 87.0,17.9 84.5,27.8 94.6,29.6 89.3,38.4 98.5,43.0 91.0,50.0 98.5,57.0 89.3,61.6 94.6,70.4 84.5,72.2 87.0,82.1 76.8,81.0 76.5,91.2 67.0,87.3 63.8,97.0 55.8,90.6 50.0,99.0 44.2,90.6 36.2,97.0 33.0,87.3 23.5,91.2 23.2,81.0 13.0,82.1 15.5,72.2 5.4,70.4 10.7,61.6 1.5,57.0 9.0,50.0 1.5,43.0 10.7,38.4 5.4,29.6 15.5,27.8 13.0,17.9 23.2,19.0 23.5,8.8 33.0,12.7 36.2,3.0 44.2,9.4" fill="#1c1712"/><polygon points="50.0,4.0 55.5,11.9 63.0,5.9 66.0,15.0 74.9,11.3 75.2,20.9 84.8,19.9 82.4,29.2 91.8,30.9 86.9,39.2 95.5,43.5 88.5,50.0 95.5,56.5 86.9,60.8 91.8,69.1 82.4,70.8 84.8,80.1 75.2,79.1 74.9,88.7 66.0,85.0 63.0,94.1 55.5,88.1 50.0,96.0 44.5,88.1 37.0,94.1 34.0,85.0 25.1,88.7 24.8,79.1 15.2,80.1 17.6,70.8 8.2,69.1 13.1,60.8 4.5,56.5 11.5,50.0 4.5,43.5 13.1,39.2 8.2,30.9 17.6,29.2 15.2,19.9 24.8,20.9 25.1,11.3 34.0,15.0 37.0,5.9 44.5,11.9" fill="#d6231a"/><polygon points="50.0,13.0 54.4,19.3 60.4,14.5 62.9,21.8 70.0,18.9 70.3,26.6 78.0,25.8 76.1,33.2 83.7,34.6 79.7,41.3 86.6,44.7 81.0,50.0 86.6,55.3 79.7,58.7 83.7,65.4 76.1,66.8 78.0,74.2 70.3,73.4 70.0,81.1 62.9,78.2 60.4,85.5 54.4,80.7 50.0,87.0 45.6,80.7 39.6,85.5 37.1,78.2 30.0,81.1 29.7,73.4 22.0,74.2 23.9,66.8 16.3,65.4 20.3,58.7 13.4,55.3 19.0,50.0 13.4,44.7 20.3,41.3 16.3,34.6 23.9,33.2 22.0,25.8 29.7,26.6 30.0,18.9 37.1,21.8 39.6,14.5 45.6,19.3" fill="none" stroke="#ffe250" stroke-width="1.4"/><text x="50" y="35" class="pb-top">ONLY</text><text x="50" y="63" class="pb-price" style="font-size:24px">$2.99</text></svg></div>
           <h3>Cheetah Breedah</h3>
           <p class="game-tagline">Can you breed a King Cheetah?</p>
           <p class="game-body">Feed, exercise, and care for a roster of cheetahs, each with their own build and personality. Dig into real genetics, avoid inbreeding your studbook into a corner, and try to land an actual King Cheetah through simulated lab work. Regular mode runs on real time, Casual mode doesn't punish you for skipping a week.</p>
@@ -1366,7 +1407,7 @@
           <img src="rage-cat.png" alt="Rage Game Arcade corner-cat minigame">
         </div>
         <div class="game-info">
-          <span class="game-badge">Open testing</span>
+          <div class="game-head"><span class="game-badge">Open testing</span><svg class="price-badge" viewBox="0 0 100 100" role="img" aria-label="Price: $2.49"><polygon points="50.0,1.0 55.8,9.4 63.8,3.0 67.0,12.7 76.5,8.8 76.8,19.0 87.0,17.9 84.5,27.8 94.6,29.6 89.3,38.4 98.5,43.0 91.0,50.0 98.5,57.0 89.3,61.6 94.6,70.4 84.5,72.2 87.0,82.1 76.8,81.0 76.5,91.2 67.0,87.3 63.8,97.0 55.8,90.6 50.0,99.0 44.2,90.6 36.2,97.0 33.0,87.3 23.5,91.2 23.2,81.0 13.0,82.1 15.5,72.2 5.4,70.4 10.7,61.6 1.5,57.0 9.0,50.0 1.5,43.0 10.7,38.4 5.4,29.6 15.5,27.8 13.0,17.9 23.2,19.0 23.5,8.8 33.0,12.7 36.2,3.0 44.2,9.4" fill="#1c1712"/><polygon points="50.0,4.0 55.5,11.9 63.0,5.9 66.0,15.0 74.9,11.3 75.2,20.9 84.8,19.9 82.4,29.2 91.8,30.9 86.9,39.2 95.5,43.5 88.5,50.0 95.5,56.5 86.9,60.8 91.8,69.1 82.4,70.8 84.8,80.1 75.2,79.1 74.9,88.7 66.0,85.0 63.0,94.1 55.5,88.1 50.0,96.0 44.5,88.1 37.0,94.1 34.0,85.0 25.1,88.7 24.8,79.1 15.2,80.1 17.6,70.8 8.2,69.1 13.1,60.8 4.5,56.5 11.5,50.0 4.5,43.5 13.1,39.2 8.2,30.9 17.6,29.2 15.2,19.9 24.8,20.9 25.1,11.3 34.0,15.0 37.0,5.9 44.5,11.9" fill="#d6231a"/><polygon points="50.0,13.0 54.4,19.3 60.4,14.5 62.9,21.8 70.0,18.9 70.3,26.6 78.0,25.8 76.1,33.2 83.7,34.6 79.7,41.3 86.6,44.7 81.0,50.0 86.6,55.3 79.7,58.7 83.7,65.4 76.1,66.8 78.0,74.2 70.3,73.4 70.0,81.1 62.9,78.2 60.4,85.5 54.4,80.7 50.0,87.0 45.6,80.7 39.6,85.5 37.1,78.2 30.0,81.1 29.7,73.4 22.0,74.2 23.9,66.8 16.3,65.4 20.3,58.7 13.4,55.3 19.0,50.0 13.4,44.7 20.3,41.3 16.3,34.6 23.9,33.2 22.0,25.8 29.7,26.6 30.0,18.9 37.1,21.8 39.6,14.5 45.6,19.3" fill="none" stroke="#ffe250" stroke-width="1.4"/><text x="50" y="35" class="pb-top">ONLY</text><text x="50" y="63" class="pb-price" style="font-size:24px">$2.49</text></svg></div>
           <h3>Rage Game Arcade</h3>
           <p class="game-tagline">Old-school Flash-portal pain, four games deep.</p>
           <p class="game-body">Four short, brutal minigames built in the spirit of old-school Flash game portals. Dodge, dash, and precision-tap your way through fast, frustrating, "one more try" challenges. No accounts, no ads, no internet required, just pick up and play.</p>
@@ -1384,7 +1425,7 @@
           <img src="motion-tuning.png" alt="Motion Augmentat-inator detection tuning sliders">
         </div>
         <div class="game-info">
-          <span class="game-badge">Open testing</span>
+          <div class="game-head"><span class="game-badge">Open testing</span><svg class="price-badge" viewBox="0 0 100 100" role="img" aria-label="Price: $4.99"><polygon points="50.0,1.0 55.8,9.4 63.8,3.0 67.0,12.7 76.5,8.8 76.8,19.0 87.0,17.9 84.5,27.8 94.6,29.6 89.3,38.4 98.5,43.0 91.0,50.0 98.5,57.0 89.3,61.6 94.6,70.4 84.5,72.2 87.0,82.1 76.8,81.0 76.5,91.2 67.0,87.3 63.8,97.0 55.8,90.6 50.0,99.0 44.2,90.6 36.2,97.0 33.0,87.3 23.5,91.2 23.2,81.0 13.0,82.1 15.5,72.2 5.4,70.4 10.7,61.6 1.5,57.0 9.0,50.0 1.5,43.0 10.7,38.4 5.4,29.6 15.5,27.8 13.0,17.9 23.2,19.0 23.5,8.8 33.0,12.7 36.2,3.0 44.2,9.4" fill="#1c1712"/><polygon points="50.0,4.0 55.5,11.9 63.0,5.9 66.0,15.0 74.9,11.3 75.2,20.9 84.8,19.9 82.4,29.2 91.8,30.9 86.9,39.2 95.5,43.5 88.5,50.0 95.5,56.5 86.9,60.8 91.8,69.1 82.4,70.8 84.8,80.1 75.2,79.1 74.9,88.7 66.0,85.0 63.0,94.1 55.5,88.1 50.0,96.0 44.5,88.1 37.0,94.1 34.0,85.0 25.1,88.7 24.8,79.1 15.2,80.1 17.6,70.8 8.2,69.1 13.1,60.8 4.5,56.5 11.5,50.0 4.5,43.5 13.1,39.2 8.2,30.9 17.6,29.2 15.2,19.9 24.8,20.9 25.1,11.3 34.0,15.0 37.0,5.9 44.5,11.9" fill="#d6231a"/><polygon points="50.0,13.0 54.4,19.3 60.4,14.5 62.9,21.8 70.0,18.9 70.3,26.6 78.0,25.8 76.1,33.2 83.7,34.6 79.7,41.3 86.6,44.7 81.0,50.0 86.6,55.3 79.7,58.7 83.7,65.4 76.1,66.8 78.0,74.2 70.3,73.4 70.0,81.1 62.9,78.2 60.4,85.5 54.4,80.7 50.0,87.0 45.6,80.7 39.6,85.5 37.1,78.2 30.0,81.1 29.7,73.4 22.0,74.2 23.9,66.8 16.3,65.4 20.3,58.7 13.4,55.3 19.0,50.0 13.4,44.7 20.3,41.3 16.3,34.6 23.9,33.2 22.0,25.8 29.7,26.6 30.0,18.9 37.1,21.8 39.6,14.5 45.6,19.3" fill="none" stroke="#ffe250" stroke-width="1.4"/><text x="50" y="35" class="pb-top">ONLY</text><text x="50" y="63" class="pb-price" style="font-size:24px">$4.99</text></svg></div>
           <h3>Motion Augmentat-inator</h3>
           <p class="game-tagline">See what's really moving.</p>
           <p class="game-body">Point your camera and let Motion Augmentat-inator flag movement the moment it happens. All detection runs right on your device. Nothing you record ever leaves your phone.</p>
@@ -1402,7 +1443,7 @@
           <img class="portrait" src="nm-events.png" alt="Night Monitor recorded events list with play and delete controls">
         </div>
         <div class="game-info">
-          <span class="game-badge">Open testing</span>
+          <div class="game-head"><span class="game-badge">Open testing</span><svg class="price-badge" viewBox="0 0 100 100" role="img" aria-label="Price: $0.99"><polygon points="50.0,1.0 55.8,9.4 63.8,3.0 67.0,12.7 76.5,8.8 76.8,19.0 87.0,17.9 84.5,27.8 94.6,29.6 89.3,38.4 98.5,43.0 91.0,50.0 98.5,57.0 89.3,61.6 94.6,70.4 84.5,72.2 87.0,82.1 76.8,81.0 76.5,91.2 67.0,87.3 63.8,97.0 55.8,90.6 50.0,99.0 44.2,90.6 36.2,97.0 33.0,87.3 23.5,91.2 23.2,81.0 13.0,82.1 15.5,72.2 5.4,70.4 10.7,61.6 1.5,57.0 9.0,50.0 1.5,43.0 10.7,38.4 5.4,29.6 15.5,27.8 13.0,17.9 23.2,19.0 23.5,8.8 33.0,12.7 36.2,3.0 44.2,9.4" fill="#1c1712"/><polygon points="50.0,4.0 55.5,11.9 63.0,5.9 66.0,15.0 74.9,11.3 75.2,20.9 84.8,19.9 82.4,29.2 91.8,30.9 86.9,39.2 95.5,43.5 88.5,50.0 95.5,56.5 86.9,60.8 91.8,69.1 82.4,70.8 84.8,80.1 75.2,79.1 74.9,88.7 66.0,85.0 63.0,94.1 55.5,88.1 50.0,96.0 44.5,88.1 37.0,94.1 34.0,85.0 25.1,88.7 24.8,79.1 15.2,80.1 17.6,70.8 8.2,69.1 13.1,60.8 4.5,56.5 11.5,50.0 4.5,43.5 13.1,39.2 8.2,30.9 17.6,29.2 15.2,19.9 24.8,20.9 25.1,11.3 34.0,15.0 37.0,5.9 44.5,11.9" fill="#d6231a"/><polygon points="50.0,13.0 54.4,19.3 60.4,14.5 62.9,21.8 70.0,18.9 70.3,26.6 78.0,25.8 76.1,33.2 83.7,34.6 79.7,41.3 86.6,44.7 81.0,50.0 86.6,55.3 79.7,58.7 83.7,65.4 76.1,66.8 78.0,74.2 70.3,73.4 70.0,81.1 62.9,78.2 60.4,85.5 54.4,80.7 50.0,87.0 45.6,80.7 39.6,85.5 37.1,78.2 30.0,81.1 29.7,73.4 22.0,74.2 23.9,66.8 16.3,65.4 20.3,58.7 13.4,55.3 19.0,50.0 13.4,44.7 20.3,41.3 16.3,34.6 23.9,33.2 22.0,25.8 29.7,26.6 30.0,18.9 37.1,21.8 39.6,14.5 45.6,19.3" fill="none" stroke="#ffe250" stroke-width="1.4"/><text x="50" y="35" class="pb-top">ONLY</text><text x="50" y="63" class="pb-price" style="font-size:24px">$0.99</text></svg></div>
           <h3>Night Monitor</h3>
           <p class="game-tagline">Sleep easy. We're listening for what matters.</p>
           <p class="game-body">Night Monitor listens through the night, filters out normal background noise, and flags or saves the sounds worth waking up for, snoring included.</p>
